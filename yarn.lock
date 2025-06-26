@@ -215,6 +215,15 @@
     "@heroui/system" "2.4.18"
     "@heroui/use-measure" "2.1.7"
 
+"@heroui/image@^2.2.14":
+  version "2.2.14"
+  resolved "https://registry.yarnpkg.com/@heroui/image/-/image-2.2.14.tgz#49ef5d5be19d31a13cedeb4f3e65c483d41fc383"
+  integrity sha512-mC6p4VcQ9C2BrHOvx/u2BJKs6wbslwqegn/ql99QWs197D771nPz+/ahawZJqO5NG/p2KZrs31eUuqc1zbNhGQ==
+  dependencies:
+    "@heroui/react-utils" "2.1.11"
+    "@heroui/shared-utils" "2.1.9"
+    "@heroui/use-image" "2.1.10"
+
 "@heroui/input@2.4.22":
   version "2.4.22"
   resolved "https://registry.yarnpkg.com/@heroui/input/-/input-2.4.22.tgz#4d4fc5f618951cd5f23c8821232975f3a907ca15"
@@ -437,6 +446,14 @@
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/@heroui/use-clipboard/-/use-clipboard-2.1.8.tgz#1a6f89424d83e2f9b6aaee298d708b0f3e1fe46c"
   integrity sha512-itT5PCoMRoa6rjV51Z9wxeDQpSYMZj2sDFYrM7anGFO/4CAsQ/NfQoPwl5+kX0guqCcCGMqgFnNzNyQuNNsPtg==
+
+"@heroui/use-image@2.1.10":
+  version "2.1.10"
+  resolved "https://registry.yarnpkg.com/@heroui/use-image/-/use-image-2.1.10.tgz#8556e97867fc651b695a69d44c28798e72075c15"
+  integrity sha512-I33fojDY/9MiXsJATO5nDVLlBhihQBdCeIQzPfZB5pUO1XQl193D0O1lUrYko9HyxbzYdiu2Ffmd0FC/NP/qlw==
+  dependencies:
+    "@heroui/react-utils" "2.1.11"
+    "@heroui/use-safe-layout-effect" "2.1.7"
 
 "@heroui/use-is-mobile@2.2.10":
   version "2.2.10"
@@ -3545,6 +3562,11 @@ react-dom@18.3.1:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
 
+react-icons@^5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.5.0.tgz#8aa25d3543ff84231685d3331164c00299cdfaf2"
+  integrity sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==
+
 react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -4002,6 +4024,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+swiper@^11.2.8:
+  version "11.2.8"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-11.2.8.tgz#2b5d7da3093454c0a7bf090f1714fb4332142702"
+  integrity sha512-S5FVf6zWynPWooi7pJ7lZhSUe2snTzqLuUzbd5h5PHUOhzgvW0bLKBd2wv0ixn6/5o9vwc/IkQT74CRcLJQzeg==
 
 synckit@^0.11.0:
   version "0.11.8"

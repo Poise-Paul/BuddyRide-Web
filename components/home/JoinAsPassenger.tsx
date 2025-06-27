@@ -5,36 +5,37 @@ import { IoMdCheckmark } from "react-icons/io";
 
 type Props = {};
 
-const JoinAsPassenger = (props: Props) => {
+const JoinAsPassenger = (_props: Props) => {
   const list = [
     "Join rides created by drivers around you and also search for rides available",
     "Pay lesser fees instead of solo rides, split the cost with other passengers",
     "Make friends and build connection with other passengers",
     "Make payment with the platform you’re used to already",
   ];
+
   return (
-    <div className="grid my-20 grid-cols-2">
-      <div className="flex flex-col gap-4 justify-center">
-        <h1 className="text-black/30 text-xl font-semibold">
+    <div className="my-20 grid grid-cols-2">
+      <div className="flex flex-col justify-center gap-4">
+        <h1 className="text-xl font-semibold text-black/30">
           Become a passenger
         </h1>
-        <h1 className="text-4xl text-primary font-black">
+        <h1 className="text-4xl font-black text-primary">
           Join As A Passenger
         </h1>
-        <ul className="max-w-96 flex flex-col gap-4">
+        <ul className="flex max-w-96 flex-col gap-4">
           {list.map((x, key) => (
             <li key={key} className="flex gap-2">
-              <IoMdCheckmark className="text-primary text-2xl" />
-              <span> {x}</span>
+              <IoMdCheckmark className="text-2xl text-primary" />
+              <span>{x}</span>
             </li>
           ))}
         </ul>
-        <Button radius="sm" className="bg-primary px-10 max-w-fit text-white">
+        <Button className="max-w-fit bg-primary px-10 text-white" radius="sm">
           Join Now
         </Button>
       </div>
-      <div className="">
-        <Image src="/join-as-passenger.png" alt="join-as-passenger" />
+      <div>
+        <Image alt="join-as-passenger" src="/join-as-passenger.png" />
       </div>
     </div>
   );

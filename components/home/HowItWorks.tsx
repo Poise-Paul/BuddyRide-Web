@@ -1,17 +1,12 @@
 "use client";
+
 import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-
-import { FreeMode, Pagination } from "swiper/modules";
 
 type Props = {};
 
-const HowItWorks = (props: Props) => {
+const HowItWorks = (_props: Props) => {
   const images = [
     {
       title: "Find Ride",
@@ -34,40 +29,38 @@ const HowItWorks = (props: Props) => {
       img: "/work-person-04.png",
     },
   ];
+
   return (
-    <div className="flex overflow-hidden my-20 flex-col gap-20">
-      <div className="mx-20 justify-center gap-3 flex flex-col items-center text-center">
-        <h1 className="text-4xl text-primary font-black">How it works</h1>
+    <div className="my-20 flex flex-col gap-20 overflow-hidden">
+      <div className="mx-20 flex flex-col items-center justify-center gap-3 text-center">
+        <h1 className="text-4xl font-black text-primary">How it works</h1>
         <p className="max-w-xl">
           BuddyRide connects riders with trusted drivers for safe, hassle-free
           trips. Just request, match, and ride!
         </p>
       </div>
 
-      <div className="flex overflow-hidden gap-5">
-        {images.map((x, key) => {
-          return (
-            <div key={key}>
-              <div className="rounded-xl relative">
-                <Image
-                  width={600}
-                  height={420}
-                  className="object-cover"
-                  src={x.img}
-                  alt={`work-person-0${key}`}
-                />
-
-                <div className="absolute bg-gradient-to-t from-black to-transparent h-full rounded-xl  z-10 flex flex-col gap-2 p-6 bottom-0 items-baseline justify-end">
-                  <h1 className="text-white text-3xl font-black">{x.title}</h1>
-                  <p className="text-white">{x.desc}</p>
-                  <Button radius="sm" className="bg-primary w-fit text-white">
-                    Get Started
-                  </Button>
-                </div>
+      <div className="flex gap-5 overflow-hidden">
+        {images.map((x, key) => (
+          <div key={key}>
+            <div className="relative rounded-xl">
+              <Image
+                alt={`work-person-0${key}`}
+                className="object-cover"
+                height={420}
+                src={x.img}
+                width={600}
+              />
+              <div className="absolute bottom-0 z-10 flex h-full flex-col items-baseline justify-end gap-2 rounded-xl bg-gradient-to-t from-black to-transparent p-6">
+                <h1 className="text-3xl font-black text-white">{x.title}</h1>
+                <p className="text-white">{x.desc}</p>
+                <Button className="w-fit bg-primary text-white" radius="sm">
+                  Get Started
+                </Button>
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );

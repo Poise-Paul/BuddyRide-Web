@@ -1,6 +1,3 @@
-import { FaApple } from "react-icons/fa";
-import { FaGooglePlay } from "react-icons/fa6";
-import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
 import HeroTitle from "@/components/home/HeroTitle";
 import HowItWorks from "@/components/home/HowItWorks";

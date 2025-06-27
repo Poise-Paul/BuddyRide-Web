@@ -3,7 +3,7 @@ import React from "react";
 
 type Props = {};
 
-const NewsSection = (props: Props) => {
+const NewsSection = (_props: Props) => {
   const news = [
     {
       img: "/news-02.jpg",
@@ -22,35 +22,36 @@ const NewsSection = (props: Props) => {
       date: "20/06/2025",
     },
   ];
+
   return (
-    <div className="flex my-20 items-center flex-col">
-      <div className="text-center flex flex-col gap-3">
+    <div className="my-20 flex flex-col items-center">
+      <div className="flex flex-col gap-3 text-center">
         <h1 className="text-black/30">BuddyRide blogs and News</h1>
-        <h1 className="text-4xl text-primary font-black">
+        <h1 className="text-4xl font-black text-primary">
           Latest BuddyRide Blog
         </h1>
       </div>
 
-      <div className="flex gap-5 my-20">
-        <div className="flex drop-shadow-lg rounded-2xl">
-          <div className="rounded-xl flex">
+      <div className="my-20 flex gap-5">
+        <div className="flex rounded-2xl drop-shadow-lg">
+          <div className="flex rounded-xl">
             <Image
-              src="/News-Section.jpg"
-              radius="none"
-              className="rounded-l-2xl h-full object-cover"
               alt="news-section"
+              className="h-full rounded-l-2xl object-cover"
+              radius="none"
+              src="/News-Section.jpg"
             />
           </div>
-          <div className="flex  bg-white border-[#A6A6A6] rounded-r-2xl border-1  flex-col gap-4 p-5">
+          <div className="flex flex-col gap-4 rounded-r-2xl border-1 border-[#A6A6A6] bg-white p-5">
             <div className="flex items-center justify-between">
               <h1 className="font-bold">News</h1>
               <p className="text-black/50">03/06/2025</p>
             </div>
-            <h1 className="font-bold text-2xl">
+            <h1 className="text-2xl font-bold">
               The Future of Ride-Sharing: <br /> How BuddyRide is Changing the
               Game
             </h1>
-            <p className="text-black/50 text-lg">
+            <p className="text-lg text-black/50">
               Ride-sharing has transformed urban mobility, making transportation
               more flexible and accessible. BuddyRide takes it further by
               ensuring safety, affordability, and convenience, connecting riders
@@ -60,13 +61,20 @@ const NewsSection = (props: Props) => {
             </p>
           </div>
         </div>
-        <div className="flex flex-col p-4 border-1 rounded-2xl border-[#A6A6A6] gap-7">
+
+        <div className="flex flex-col gap-7 rounded-2xl border-1 border-[#A6A6A6] p-4">
           {news.map((x, key) => (
             <div key={key} className="grid grid-cols-3 gap-2">
-              <Image src={x.img} height={100} width={600} className="object-cover" alt="news-second" />
+              <Image
+                alt="news-second"
+                className="object-cover"
+                height={100}
+                src={x.img}
+                width={600}
+              />
               <div className="col-span-2 gap-1">
                 <h1 className="text-sm font-bold">{x.title}</h1>
-                <small className="text-black/50 font-semibold text-tiny">
+                <small className="text-tiny font-semibold text-black/50">
                   {x.date}
                 </small>
               </div>

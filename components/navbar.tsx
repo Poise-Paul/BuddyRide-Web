@@ -11,21 +11,11 @@ import { Button } from "@heroui/button";
 import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
-import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
 import { IoMenu } from "react-icons/io5";
-import clsx from "clsx";
-
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import {
-  TwitterIcon,
-  GithubIcon,
-  DiscordIcon,
-  HeartFilledIcon,
-  SearchIcon,
-  Logo,
-} from "@/components/icons";
+import { GithubIcon, SearchIcon } from "@/components/icons";
 import { Image } from "@heroui/image";
 
 export const Navbar = () => {
@@ -74,7 +64,9 @@ export const Navbar = () => {
           <Link isExternal aria-label="Twitter" href={siteConfig.links.twitter}>
             <p className="font-semibold">Support</p>
           </Link>
-          <Button radius="sm" className="bg-primary font-medium text-white">Login</Button>
+          <Button radius="sm" className="bg-primary font-medium text-white">
+            Login
+          </Button>
           <IoMenu className="text-3xl" />
         </NavbarItem>
       </NavbarContent>

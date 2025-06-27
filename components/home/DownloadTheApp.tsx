@@ -27,12 +27,12 @@ const DownloadTheApp = () => {
   ];
 
   return (
-    <div className="flex flex-col">
-      <div className="grid grid-cols-2">
-        <div>
-          <Image alt="download-the-app" src="/download-app-01.png" />
+    <div className="flex relative w-full mb-80 flex-col">
+      <div className="flex mx-20 gap-10">
+        <div className="flex items-center justify-center">
+          <Image alt="download-the-app" className="w-[25rem]" src="/download-app-01.png" />
         </div>
-        <div className="flex flex-col justify-center">
+        <div className="flex max-w-xl flex-col gap-4 justify-center">
           <h1 className="text-lg font-semibold text-black/30">
             Join your buddies today
           </h1>
@@ -61,7 +61,7 @@ const DownloadTheApp = () => {
         </div>
       </div>
 
-      <div className="mt-20 flex flex-col items-center justify-center gap-4 rounded-2xl bg-[#F3F5F7] p-20 text-center">
+      <div className="absolute z-10 -bottom-[29rem] w-full flex flex-col items-center justify-center gap-4 rounded-2xl bg-[#F3F5F7] p-20 text-center">
         <h1 className="text-2xl font-semibold text-black/30">Testimonials</h1>
         <h1 className="text-4xl font-black text-primary">
           What People are saying

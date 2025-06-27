@@ -24,7 +24,7 @@ const NewsSection = (_props: Props) => {
   ];
 
   return (
-    <div className="my-20 flex flex-col items-center">
+    <div className="mb-20 mt-64 flex flex-col items-center">
       <div className="flex flex-col gap-3 text-center">
         <h1 className="text-black/30">BuddyRide blogs and News</h1>
         <h1 className="text-4xl font-black text-primary">

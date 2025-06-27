@@ -19,7 +19,7 @@ const Questions = (_props: Props) => {
         <div className="my-2">
           <Textarea
             classNames={{
-              inputWrapper: "bg-white drop-shadow-lg",
+              inputWrapper: "bg-white drop-shadow-lg p-4",
               mainWrapper: "bg-white",
             }}
             minRows={8}
@@ -29,7 +29,7 @@ const Questions = (_props: Props) => {
         </div>
 
         <Button
-          className="w-fit bg-primary text-white"
+          className="w-fit bg-primary font-medium py-6 px-5 text-medium text-white"
           radius="sm"
           startContent={<BsFillSendFill />}
         >

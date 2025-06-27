@@ -21,11 +21,11 @@ const DownloadTheApp = (props: Props) => {
       position: "University Lecturer",
     },
     {
-      img: "/testimonial-01.jpg",
-      tesst: "Buddy",
-      desc: "I love how reliable BuddyRide is. Whether I’m heading to the airport or just around town, I always find a comfortable ride at a great price!",
-      name: "James, London",
-      position: "Software Engineer",
+      img: "/testimonial-03.jpg",
+      tesst: "*Seamless London Commutes*",
+      desc: "BuddyRide makes commuting across London effortless! The drivers are professional, the app is seamless, and I always feel safe. It’s my go-to for getting around.",
+      name: "Emma, London",
+      position: "Marketing Manager",
     },
   ];
   return (
@@ -62,12 +62,43 @@ const DownloadTheApp = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F3F5F7]">
-        <h1 className="text-black/30 text-lg">Testimonials</h1>
+      <div className="bg-[#F3F5F7] flex flex-col gap-4 rounded-2xl justify-center items-center text-center p-20">
+        <h1 className="text-black/30 text-2xl font-semibold">Testimonials</h1>
         <h1 className="font-black text-primary text-4xl">
           What People are saying
         </h1>
-        <div className="grid grid-cols-3"></div>
+        <div className="grid gap-5 my-20 grid-cols-3">
+          {testimonials.map((x, key) => (
+            <div
+              key={key}
+              className="bg-white relative p-7 rounded-lg drop-shadow-md"
+            >
+              <div className="bg-white flex -top-10 left-10 justify-center items-center absolute rounded-full h-[76px] w-[76px]">
+                <Image
+                  src={x.img}
+                  height={70}
+                  width={70}
+                  radius="full"
+                  className="object-cover"
+                  alt="testimonial-image"
+                />
+              </div>
+              <div className="text-left mt-7 flex flex-col gap-1">
+                <p className="font-semibold">{x.tesst}</p>
+                <p className="text-tiny text-[#A6A6A6]">{x.desc}</p>
+                <h1 className="font-black">{x.name}</h1>
+                <p className="font-semibold text-secondary">{x.position}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center items-center">
+          <div className="flex gap-1">
+            <div className="h-2 w-4 rounded-full bg-primary/10" />
+            <div className="h-2 w-7 rounded-full bg-primary" />
+            <div className="h-2 w-4 rounded-full bg-primary/10" />
+          </div>
+        </div>
       </div>
     </div>
   );

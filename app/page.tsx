@@ -7,6 +7,9 @@ import HowItWorks from "@/components/home/HowItWorks";
 import JoinAsDriver from "@/components/home/JoinAsDriver";
 import JoinAsPassenger from "@/components/home/JoinAsPassenger";
 import DownloadTheApp from "@/components/home/DownloadTheApp";
+import NewsSection from "@/components/home/NewsSection";
+import FAQ from "@/components/home/Faq";
+import Questions from "@/components/home/Questions";
 
 export default function Home() {
   return (
@@ -24,6 +27,9 @@ export default function Home() {
       <JoinAsDriver />
       <JoinAsPassenger />
       <DownloadTheApp />
+      <NewsSection />
+      <FAQ />
+      <Questions />
     </section>
   );
 }

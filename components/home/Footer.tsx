@@ -10,7 +10,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className="bg-[#F3F5F7] flex gap-5 rounded-4xl p-10">
+    <div className="bg-[#F3F5F7] mx-20 rounded-xl flex gap-5 rounded-4xl p-10">
       <div className="">
         <Image src="/Primary-Logo.svg" />
         <h1 className="font-semibold">BUDDYRIDE</h1>
@@ -39,10 +39,37 @@ const Footer = (props: Props) => {
       <div className="grid grid-cols-4">
         <div className="">
           <h1 className="font-semibold">BuddyRide</h1>
+          <ul className="text-[#5E6461]">
+            <li>Sign Up As Driver</li>
+            <li>Sign Up As Passenger</li>
+          </ul>
         </div>
-        <div className=""></div>
-        <div className=""></div>
-        <div className=""></div>
+        <div className="">
+          <h1 className="font-semibold">Useful Links</h1>
+          <ul className="text-[#5E6461]">
+            <li>About Us</li>
+            <li>FAQ</li>
+            <li>Terms of service</li>
+            <li>Privacy Policy</li>
+            <li>Contact Us</li>
+            <li>Help Center</li>
+          </ul>
+        </div>
+
+        <div className="">
+          <h1 className="font-semibold">Safety</h1>
+          <ul className="text-[#5E6461]">
+            <li>Driver Safety</li>
+            <li>Passenger Safety</li>
+          </ul>
+        </div>
+        <div className="">
+          <h1 className="font-semibold">Address</h1>
+          <p className="text-[#5E6461]">
+            1000 North Circular Road, London Borough of Brent, NW2 7FJ, United
+            Kingdom
+          </p>
+        </div>
       </div>
     </div>
   );

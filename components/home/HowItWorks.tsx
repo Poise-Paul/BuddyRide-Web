@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 
 import { FreeMode, Pagination } from "swiper/modules";
 
-
 type Props = {};
 
 const HowItWorks = (props: Props) => {
@@ -36,29 +35,24 @@ const HowItWorks = (props: Props) => {
     },
   ];
   return (
-    <div className="">
-      <h1 className="text-4xl text-primary font-black">How it works</h1>
-      <p className="">
-        BuddyRide connects riders with trusted drivers for safe, hassle-free
-        trips. Just request, match, and ride!
-      </p>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        freeMode={true}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[FreeMode, Pagination]}
-        className="mySwiper"
-      >
+    <div className="flex overflow-hidden my-20 flex-col gap-20">
+      <div className="mx-20 justify-center gap-3 flex flex-col items-center text-center">
+        <h1 className="text-4xl text-primary font-black">How it works</h1>
+        <p className="max-w-xl">
+          BuddyRide connects riders with trusted drivers for safe, hassle-free
+          trips. Just request, match, and ride!
+        </p>
+      </div>
+
+      <div className="flex overflow-hidden gap-5">
         {images.map((x, key) => {
           return (
-            <SwiperSlide key={key}>
+            <div key={key}>
               <div className="rounded-xl relative">
                 <Image
-                  width={500}
-                  height={500}
+                  width={600}
+                  height={420}
+                  className="object-cover"
                   src={x.img}
                   alt={`work-person-0${key}`}
                 />
@@ -71,10 +65,10 @@ const HowItWorks = (props: Props) => {
                   </Button>
                 </div>
               </div>
-            </SwiperSlide>
+            </div>
           );
         })}
-      </Swiper>
+      </div>
     </div>
   );
 };

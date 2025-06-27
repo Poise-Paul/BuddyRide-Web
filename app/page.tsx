@@ -4,10 +4,13 @@ import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
 import HeroTitle from "@/components/home/HeroTitle";
 import HowItWorks from "@/components/home/HowItWorks";
+import JoinAsDriver from "@/components/home/JoinAsDriver";
+import JoinAsPassenger from "@/components/home/JoinAsPassenger";
+import DownloadTheApp from "@/components/home/DownloadTheApp";
 
 export default function Home() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+    <section className="flex  flex-col items-center justify-center gap-4 py-8 md:py-10">
       <HeroTitle />
       <div className="w-screen">
         <Image
@@ -18,6 +21,9 @@ export default function Home() {
         />
       </div>
       <HowItWorks />
+      <JoinAsDriver />
+      <JoinAsPassenger />
+      <DownloadTheApp />
     </section>
   );
 }

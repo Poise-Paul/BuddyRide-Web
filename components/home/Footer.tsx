@@ -54,12 +54,18 @@ const Footer = (props: Props) => {
         </div>
       </div>
       <div className="grid grid-cols-4">
-        <div className="">
-          <h1 className="font-semibold">BuddyRide</h1>
-          <ul className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-3">
-            <li>Sign Up As Driver</li>
-            <li>Sign Up As Passenger</li>
-          </ul>
+        <div className="flex gap-5 flex-col">
+          <div>
+            <h1 className="font-semibold">BuddyRide</h1>
+            <ul className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-3">
+              <li>Sign Up As Driver</li>
+              <li>Sign Up As Passenger</li>
+            </ul>
+          </div>
+          <div>
+            <h1 className="font-semibold">Parent Company</h1>
+            <p className="text-[#5E6461] font-medium">MALLKIS LTD</p>
+          </div>
         </div>
         <div className="">
           <h1 className="font-semibold">Useful Links</h1>

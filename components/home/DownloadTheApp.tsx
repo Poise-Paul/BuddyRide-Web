@@ -27,7 +27,7 @@ const DownloadTheApp = () => {
   ];
 
   return (
-    <div className="flex relative w-full mb-80 flex-col">
+    <div className="flex relative w-full sm:mb-80 xm:mt-96 flex-col">
       <div className="flex mx-20 gap-10">
         <div className="flex items-center justify-center">
           <Image alt="download-the-app" className="w-[25rem]" src="/download-app-01.png" />
@@ -61,12 +61,12 @@ const DownloadTheApp = () => {
         </div>
       </div>
 
-      <div className="absolute z-10 -bottom-[29rem] w-full flex flex-col items-center justify-center gap-4 rounded-2xl bg-[#F3F5F7] p-20 text-center">
+      <div className="absolute z-10 -bottom-[29rem] w-full flex flex-col items-center justify-center gap-4 rounded-2xl bg-[#F3F5F7] sm:p-20 p-10 text-center">
         <h1 className="text-2xl font-semibold text-black/30">Testimonials</h1>
         <h1 className="text-4xl font-black text-primary">
           What People are saying
         </h1>
-        <div className="my-20 grid grid-cols-3 gap-5">
+        <div className="my-20 grid xm:gap-16 sm:grid-cols-3 gap-5">
           {testimonials.map((x, key) => (
             <div
               key={key}

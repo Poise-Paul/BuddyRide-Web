@@ -11,7 +11,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <div className="bg-[#F3F5F7] overflow-hidden relative mx-20 my-10 rounded-3xl flex gap-40 px-10 py-20">
+    <div className="bg-[#F3F5F7] overflow-hidden relative sm:mx-20 my-10 rounded-3xl flex xm:flex-col gap-40 px-10 py-20">
       <div className="flex flex-col gap-3">
         <Image
           src="/Primary-Logo.svg"
@@ -53,7 +53,7 @@ const Footer = (props: Props) => {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-4">
+      <div className="grid sm:grid-cols-4 xm:gap-5 mb-20">
         <div className="flex gap-5 flex-col">
           <div>
             <h1 className="font-semibold">BuddyRide</h1>

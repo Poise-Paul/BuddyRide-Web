@@ -35,7 +35,7 @@ const FAQ = (props: Props) => {
     },
   ];
   return (
-    <div className="bg-[#F3F5F7] w-screen p-20">
+    <div className="bg-[#F3F5F7] w-screen sm:p-20 p-5">
       <div className="flex text-center justify-center my-10 items-center flex-col gap-4">
         <p className="text-black/30 font-semibold text-xl">Have Questions for us?</p>
         <h1 className="font-black text-5xl text-primary">FAQs</h1>

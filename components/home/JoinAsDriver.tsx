@@ -13,7 +13,7 @@ const JoinAsDriver = (_props: Props) => {
   ];
 
   return (
-    <div className="my-20 grid grid-cols-2 gap-20">
+    <div className="my-20 grid sm:grid-cols-2 gap-20">
       <div>
         <Image alt="join-as-driver" src="/join-as-driver.png" />
       </div>

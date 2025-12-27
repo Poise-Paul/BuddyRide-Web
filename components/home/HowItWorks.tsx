@@ -32,7 +32,7 @@ const HowItWorks = (_props: Props) => {
 
   return (
     <div className="my-20 flex flex-col gap-20 overflow-hidden">
-      <div className="mx-20 flex flex-col items-center justify-center gap-3 text-center">
+      <div className="sm:mx-20 mx-10 flex flex-col items-center justify-center gap-3 text-center">
         <h1 className="text-4xl font-black text-primary">How it works</h1>
         <p className="max-w-xl">
           BuddyRide connects riders with trusted drivers for safe, hassle-free
@@ -40,7 +40,7 @@ const HowItWorks = (_props: Props) => {
         </p>
       </div>
 
-      <div className="flex gap-5 overflow-hidden">
+      <div className="flex gap-5 xm:flex-col sm:overflow-hidden">
         {images.map((x, key) => (
           <div key={key}>
             <div className="relative rounded-xl">

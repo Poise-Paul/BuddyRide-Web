@@ -9,54 +9,42 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "Docs",
-      href: "/docs",
+      label: "FAQ",
+      href: "/",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "How it works",
+      href: "/",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "Cancellation & Refund Policy",
+      href: "/",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "BuddyRide General Terms",
+      href: "/",
     },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "Home",
+      href: "/",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "FAQ",
+      href: "/",
     },
     {
-      label: "Projects",
-      href: "/projects",
+      label: "How it works",
+      href: "/",
     },
     {
-      label: "Team",
-      href: "/team",
+      label: "BuddyRide General Terms",
+      href: "/",
     },
     {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Cancellation & Refund Policy",
+      href: "/",
     },
   ],
   links: {

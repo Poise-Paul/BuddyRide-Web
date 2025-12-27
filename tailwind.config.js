@@ -1,4 +1,4 @@
-import {heroui} from "@heroui/theme"
+import { heroui } from "@heroui/theme";
 
 /** @type {import('tailwindcss').Config} */
 const config = {
@@ -16,6 +16,9 @@ const config = {
       colors: {
         primary: "#1A20EA",
         secondary: "#CD1396",
+      },
+      screens: {
+        xm: { max: "640px" },
       },
     },
   },

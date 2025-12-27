@@ -14,7 +14,7 @@ const JoinAsPassenger = (_props: Props) => {
   ];
 
   return (
-    <div className="my-20 grid grid-cols-2">
+    <div className="my-20 grid xm:gap-10 sm:grid-cols-2">
       <div className="flex flex-col justify-center gap-4">
         <h1 className="text-xl font-semibold text-black/30">
           Become a passenger

@@ -12,10 +12,10 @@ const Questions = (_props: Props) => {
         <h1 className="text-xl font-semibold text-black/30">
           Write us a message
         </h1>
-        <h1 className="text-4xl font-black text-primary">
+        <h1 className="sm:text-4xl text-2xl font-black text-primary">
           Have Any Questions?
         </h1>
-        <h1 className="text-4xl">Don’t Hesitate To Contact Us</h1>
+        <h1 className="sm:text-4xl text-2xl">Don’t Hesitate To Contact Us</h1>
         <div className="my-2">
           <Textarea
             classNames={{

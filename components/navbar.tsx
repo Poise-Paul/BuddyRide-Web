@@ -4,7 +4,6 @@ import {
   NavbarMenu,
   NavbarMenuToggle,
   NavbarBrand,
-  NavbarItem,
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Button } from "@heroui/button";
@@ -12,9 +11,7 @@ import { Kbd } from "@heroui/kbd";
 import { Link } from "@heroui/link";
 import { Input } from "@heroui/input";
 import NextLink from "next/link";
-import { IoMenu } from "react-icons/io5";
 import { siteConfig } from "@/config/site";
-import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, SearchIcon } from "@/components/icons";
 import { Image } from "@heroui/image";
 
@@ -56,8 +53,8 @@ export const Navbar = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent
-        className="hidden sm:flex basis-1/5 sm:basis-full"
+      {/* <NavbarContent
+        className="hidden sm:hidden basis-1/5 sm:basis-full"
         justify="end"
       >
         <NavbarItem className="hidden sm:flex items-center gap-6">
@@ -69,13 +66,13 @@ export const Navbar = () => {
           </Button>
           <IoMenu className="text-3xl" />
         </NavbarItem>
-      </NavbarContent>
+      </NavbarContent> */}
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <Link isExternal aria-label="Github" href={siteConfig.links.github}>
+        {/* <Link isExternal aria-label="Github" href={siteConfig.links.github}>
           <GithubIcon className="text-default-500" />
-        </Link>
-        <ThemeSwitch />
+        </Link> */}
+        {/* <ThemeSwitch /> */}
         <NavbarMenuToggle />
       </NavbarContent>
 

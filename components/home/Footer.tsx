@@ -89,8 +89,7 @@ const Footer = (props: Props) => {
         <div className="">
           <h1 className="font-semibold">Address</h1>
           <p className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-3">
-            1000 North Circular Road, London Borough of Brent, NW2 7FJ, United
-            Kingdom
+            32 Salix Court Whitebeam Close Salford M6 5HL
           </p>
         </div>
       </div>

@@ -173,6 +173,17 @@
     "@react-types/accordion" "3.0.0-alpha.26"
     "@react-types/shared" "3.30.0"
 
+"@heroui/alert@^2.2.29":
+  version "2.2.29"
+  resolved "https://registry.yarnpkg.com/@heroui/alert/-/alert-2.2.29.tgz#4d709bd0dd7ba50b6afca8b912d40549e5b71238"
+  integrity sha512-poPE5fwK4CQO2s3AcLcdVyde4FU8NAJKn8YpUEcoP/Kfn8i8nuHoRKMTj5Ofs/0W/y4ysABajsgKPydPNzUupA==
+  dependencies:
+    "@heroui/button" "2.2.29"
+    "@heroui/react-utils" "2.1.14"
+    "@heroui/shared-icons" "2.1.10"
+    "@heroui/shared-utils" "2.1.12"
+    "@react-stately/utils" "3.11.0"
+
 "@heroui/aria-utils@2.2.19":
   version "2.2.19"
   resolved "https://registry.yarnpkg.com/@heroui/aria-utils/-/aria-utils-2.2.19.tgz#404ae451bf28015d296a99b884ef9e78e675de3e"
@@ -198,6 +209,33 @@
     "@react-aria/interactions" "3.25.3"
     "@react-aria/utils" "3.29.1"
     "@react-types/shared" "3.30.0"
+
+"@heroui/button@2.2.29":
+  version "2.2.29"
+  resolved "https://registry.yarnpkg.com/@heroui/button/-/button-2.2.29.tgz#dbcca14752229010d6276e67bb8e67f361b9b49c"
+  integrity sha512-F8cWp6V1/dJIeLOj0Cb9fA8luwzVKI3RUMUmx4zLo0C90cctRzssAMlg6eQ+SBz2NQxCYxMff8mtxMri1wrizg==
+  dependencies:
+    "@heroui/react-utils" "2.1.14"
+    "@heroui/ripple" "2.2.21"
+    "@heroui/shared-utils" "2.1.12"
+    "@heroui/spinner" "2.2.26"
+    "@heroui/use-aria-button" "2.2.21"
+    "@react-aria/focus" "3.21.3"
+    "@react-aria/interactions" "3.26.0"
+    "@react-types/shared" "3.32.1"
+
+"@heroui/card@^2.2.27":
+  version "2.2.27"
+  resolved "https://registry.yarnpkg.com/@heroui/card/-/card-2.2.27.tgz#e066f5a527cf3b94d53594eb24c3a30c4ce6769f"
+  integrity sha512-UP9IuKYzGCjwBaocv8eiusOi1SheV6Pn37r05N6Hrqd8DKvs2Ebgye3hGRZ3z3MKRsqFKAyhG+3tdDIjVs3J/Q==
+  dependencies:
+    "@heroui/react-utils" "2.1.14"
+    "@heroui/ripple" "2.2.21"
+    "@heroui/shared-utils" "2.1.12"
+    "@heroui/use-aria-button" "2.2.21"
+    "@react-aria/focus" "3.21.3"
+    "@react-aria/interactions" "3.26.0"
+    "@react-types/shared" "3.32.1"
 
 "@heroui/code@2.2.16":
   version "2.2.16"
@@ -395,6 +433,14 @@
     "@heroui/dom-animation" "2.1.9"
     "@heroui/shared-utils" "2.1.9"
 
+"@heroui/ripple@2.2.21":
+  version "2.2.21"
+  resolved "https://registry.yarnpkg.com/@heroui/ripple/-/ripple-2.2.21.tgz#b7d4111f6f500bfb29170d814d44330061c6cf8e"
+  integrity sha512-wairSq9LnhbIqTCJmUlJAQURQ1wcRK/L8pjg2s3R/XnvZlPXHy4ZzfphiwIlTI21z/f6tH3arxv/g1uXd1RY0g==
+  dependencies:
+    "@heroui/dom-animation" "2.1.10"
+    "@heroui/shared-utils" "2.1.12"
+
 "@heroui/shared-icons@2.1.10":
   version "2.1.10"
   resolved "https://registry.yarnpkg.com/@heroui/shared-icons/-/shared-icons-2.1.10.tgz#df53c7726d790320618530827627f71f8b8c759e"
@@ -436,6 +482,15 @@
     "@heroui/shared-utils" "2.1.9"
     "@heroui/system" "2.4.18"
     "@heroui/system-rsc" "2.3.15"
+
+"@heroui/spinner@2.2.26":
+  version "2.2.26"
+  resolved "https://registry.yarnpkg.com/@heroui/spinner/-/spinner-2.2.26.tgz#bfc76287c09d3b80506e6c350b6587f4283f099a"
+  integrity sha512-AtZhUO+IrZwahdQ5FOVptOZRMz7Z51gDUuj1K3pEJvOiKW+zvqab9BHYW9A09nd7qMH+DMM/41PQJbZg+eOHzg==
+  dependencies:
+    "@heroui/shared-utils" "2.1.12"
+    "@heroui/system" "2.4.25"
+    "@heroui/system-rsc" "2.3.21"
 
 "@heroui/switch@2.2.20":
   version "2.2.20"
@@ -3517,6 +3572,11 @@ lru-cache@^10.2.0:
   version "10.4.3"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-10.4.3.tgz#410fc8a17b70e598013df257c2446b7f3383f119"
   integrity sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
+
+lucide-react@^0.562.0:
+  version "0.562.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.562.0.tgz#217796c2f57624f012b484ea7f08505067c90d51"
+  integrity sha512-82hOAu7y0dbVuFfmO4bYF1XEwYk/mEbM5E+b1jgci/udUBEE/R7LF5Ip0CCEmXe8AybRM8L+04eP+LGZeDvkiw==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"

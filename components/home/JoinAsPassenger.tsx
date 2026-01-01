@@ -1,11 +1,15 @@
+"use client";
+
 import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
-import React from "react";
+import React, { useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
+import ComingSoonModal from "../Modals/WaitListModal";
 
 type Props = {};
 
 const JoinAsPassenger = (_props: Props) => {
+  const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
   const list = [
     "Join rides created by drivers around you and also search for rides available",
     "Pay lesser fees instead of solo rides, split the cost with other passengers",
@@ -30,13 +34,19 @@ const JoinAsPassenger = (_props: Props) => {
             </li>
           ))}
         </ul>
-        <Button className="max-w-fit bg-primary px-10 text-white" radius="sm">
+        <Button onPress={() => setOpenWaitlistModal(true)} className="max-w-fit bg-primary px-10 text-white" radius="sm">
           Join Now
         </Button>
       </div>
       <div>
         <Image alt="join-as-passenger" src="/join-as-passenger.jpg" />
       </div>
+      
+      {/* Modal */}
+      <ComingSoonModal
+        isOpen={openWaitlistModal}
+        onClose={() => setOpenWaitlistModal(false)}
+      />
     </div>
   );
 };

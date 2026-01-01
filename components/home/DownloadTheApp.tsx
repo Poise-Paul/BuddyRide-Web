@@ -15,14 +15,14 @@ const DownloadTheApp = () => {
       img: "/testimonial-02.jpg",
       name: "Sophie, London",
       position: "University Lecturer",
-      tesst: "*Hassle-Free Travel Across the City*",
+      tesst: "Hassle-Free Travel Across the City",
     },
     {
       desc: "BuddyRide makes commuting across London effortless! The drivers are professional, the app is seamless, and I always feel safe. It’s my go-to for getting around.",
       img: "/testimonial-03.jpg",
       name: "Emma, London",
       position: "Marketing Manager",
-      tesst: "*Seamless London Commutes*",
+      tesst: "Seamless London Commutes",
     },
   ];
 
@@ -36,7 +36,7 @@ const DownloadTheApp = () => {
           <h1 className="text-lg font-semibold text-black/30">
             Join your buddies today
           </h1>
-          <h1 className="text-4xl font-black text-primary">
+          <h1 className="text-4xl mt-4 font-black text-primary">
             Download BuddyRide
           </h1>
           <p>

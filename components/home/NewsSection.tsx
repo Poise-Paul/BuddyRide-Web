@@ -39,10 +39,10 @@ const NewsSection = (_props: Props) => {
               alt="news-section"
               className="h-full sm:rounded-l-2xl xm:rounded-t-2xl object-cover"
               radius="none"
-              src="/News-Section.jpg"
+              src="/work-person-04.jpg"
             />
           </div>
-          <div className="flex flex-col gap-4 sm:rounded-r-2xl border-1 border-[#A6A6A6] bg-white p-5">
+          <div className="flex flex-col gap-4 sm:max-w-[calc(100%-50%)] sm:rounded-r-2xl xm:rounded-b-2xl border-1 border-[#A6A6A6] bg-white p-5">
             <div className="flex items-center justify-between">
               <h1 className="font-bold">News</h1>
               <p className="text-black/50">03/06/2025</p>

@@ -1,10 +1,13 @@
+"use client";
 import { Button } from "@heroui/button";
-import React from "react";
+import React, { useState } from "react";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
+import ComingSoonModal from "../Modals/WaitListModal";
 
 type Props = {};
 
 const HeroTitle = (_props: Props) => {
+  const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
   return (
     <div className="flex flex-col gap-5 text-center">
       <p className="text-xl font-semibold text-black/30">
@@ -20,10 +23,15 @@ const HeroTitle = (_props: Props) => {
         easy to share a ride, split the cost, and make new connections!
       </p>
       <div className="flex justify-center gap-5">
-        <Button className="bg-primary px-10 font-medium text-white" radius="sm">
+        <Button
+          onPress={() => setOpenWaitlistModal(true)}
+          className="bg-primary px-10 font-medium text-white"
+          radius="sm"
+        >
           Get Started
         </Button>
         <Button
+          onPress={() => setOpenWaitlistModal(true)}
           className="bg-[#F8F9FA] px-5 font-medium text-[#1E1E1E]"
           radius="sm"
           startContent={
@@ -37,6 +45,11 @@ const HeroTitle = (_props: Props) => {
           Download App
         </Button>
       </div>
+      {/* Modal */}
+      <ComingSoonModal
+        isOpen={openWaitlistModal}
+        onClose={() => setOpenWaitlistModal(false)}
+      />
     </div>
   );
 };

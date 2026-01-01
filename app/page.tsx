@@ -13,7 +13,7 @@ export default function Home() {
     <section className="flex  flex-col items-center justify-center gap-4 py-8 md:py-10">
       <HeroTitle />
       <div className="w-screen">
-        <Image radius="none" src="/Car-trip.png" alt="car-trip" className="" />
+        <Image radius="none" src="/Car-trip.jpg" alt="car-trip" className="" />
       </div>
       <HowItWorks />
       <JoinAsDriver />

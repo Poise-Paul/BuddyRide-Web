@@ -1,32 +1,43 @@
 "use client";
-
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+} from "@heroui/modal";
 import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
-import React from "react";
+import React, { useState } from "react";
+import { Input } from "@heroui/input";
+import ComingSoonModal from "../Modals/WaitListModal";
 
 type Props = {};
 
 const HowItWorks = (_props: Props) => {
+  const [email, setEmail] = useState("");
+  const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
   const images = [
     {
       title: "Find Ride",
       desc: "Find ride from the list of rides created by different drivers",
-      img: "/work-person-01.png",
+      img: "/work-person-01.jpg",
     },
     {
       title: "Send Request",
       desc: "Send join request to join any ride of your choice.",
-      img: "/work-person-02.png",
+      img: "/work-person-02.jpg",
     },
     {
       title: "Make Payment",
       desc: "Make payments the same way you’re comfortable with",
-      img: "/work-person-03.png",
+      img: "/work-person-03.jpg",
     },
     {
       title: "Join Ride",
       desc: "Join ride with other passengers and enjoy your journey",
-      img: "/work-person-04.png",
+      img: "/work-person-04.jpg",
     },
   ];
 
@@ -39,7 +50,6 @@ const HowItWorks = (_props: Props) => {
           trips. Just request, match, and ride!
         </p>
       </div>
-
       <div className="flex gap-5 xm:flex-col sm:overflow-hidden">
         {images.map((x, key) => (
           <div key={key}>
@@ -54,7 +64,11 @@ const HowItWorks = (_props: Props) => {
               <div className="absolute bottom-0 z-10 flex h-full flex-col items-baseline justify-end gap-2 rounded-xl bg-gradient-to-t from-black to-transparent p-6">
                 <h1 className="text-3xl font-black text-white">{x.title}</h1>
                 <p className="text-white">{x.desc}</p>
-                <Button className="w-fit bg-primary text-white" radius="sm">
+                <Button
+                  onPress={() => setOpenWaitlistModal(true)}
+                  className="w-fit bg-primary text-white"
+                  radius="sm"
+                >
                   Get Started
                 </Button>
               </div>
@@ -62,6 +76,11 @@ const HowItWorks = (_props: Props) => {
           </div>
         ))}
       </div>
+      {/* Modal Change Updates */}
+      <ComingSoonModal
+        isOpen={openWaitlistModal}
+        onClose={() => setOpenWaitlistModal(false)}
+      />
     </div>
   );
 };

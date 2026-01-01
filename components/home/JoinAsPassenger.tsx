@@ -35,7 +35,7 @@ const JoinAsPassenger = (_props: Props) => {
         </Button>
       </div>
       <div>
-        <Image alt="join-as-passenger" src="/join-as-passenger.png" />
+        <Image alt="join-as-passenger" src="/join-as-passenger.jpg" />
       </div>
     </div>
   );

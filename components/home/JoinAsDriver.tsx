@@ -22,8 +22,8 @@ const JoinAsDriver = (_props: Props) => {
         <Image alt="join-as-driver" src="/join-as-driver.jpg" />
       </div>
       <div className="flex flex-col justify-center gap-4">
-        <p className="text-xl font-semibold text-black/30">Become a driver</p>
-        <h1 className="text-4xl font-black text-primary">Join As A Driver</h1>
+        <p className="text-xl font-NeuePlakSemibold text-black/30">Become a driver</p>
+        <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">Join As A Driver</h1>
         <ul className="flex max-w-96 flex-col gap-4">
           {list.map((x, key) => (
             <li key={key} className="flex gap-2">

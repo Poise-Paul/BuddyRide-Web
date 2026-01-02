@@ -6,6 +6,7 @@ import FAQ, { accordionList } from "@/components/home/Faq";
 import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { SearchIcon } from "@/components/icons";
+import Link from "next/link";
 
 const FaqPage = () => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
@@ -48,8 +49,8 @@ const FaqPage = () => {
         <Button
           color="primary"
           className="font-NeuePlakBold px-10 h-12"
-          as="button"
           href="/contact"
+          as={Link}
         >
           Contact Support
         </Button>

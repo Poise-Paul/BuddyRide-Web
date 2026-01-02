@@ -33,7 +33,7 @@ const DownloadTheApp = () => {
           <Image alt="download-the-app" className="w-[25rem]" src="/download-app-01.png" />
         </div>
         <div className="flex max-w-xl flex-col gap-4 justify-center">
-          <h1 className="text-lg font-semibold text-black/30">
+          <h1 className="text-xl font-NeuePlakExtendedSemiBold text-black/30">
             Join your buddies today
           </h1>
           <h1 className="text-4xl mt-4 font-black text-primary">
@@ -62,8 +62,8 @@ const DownloadTheApp = () => {
       </div>
 
       <div className="absolute z-10 -bottom-[29rem] w-full flex flex-col items-center justify-center gap-4 rounded-2xl bg-[#F3F5F7] sm:p-20 p-10 text-center">
-        <h1 className="text-2xl font-semibold text-black/30">Testimonials</h1>
-        <h1 className="text-4xl font-black text-primary">
+        <h1 className="text-2xl font-NeuePlakExtendedSemiBold text-black/30">Testimonials</h1>
+        <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">
           What People are saying
         </h1>
         <div className="my-20 grid xm:gap-16 sm:grid-cols-3 gap-5">

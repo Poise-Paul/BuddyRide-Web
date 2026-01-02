@@ -129,10 +129,10 @@ const FAQ = ({ filteredList }: Props) => {
   return (
     <div className="bg-[#F3F5F7] w-screen sm:p-20 p-5">
       <div className="flex text-center justify-center my-10 items-center flex-col gap-4">
-        <p className="text-black/30 font-semibold text-xl">
+        <p className="text-black/30 font-NeuePlakExtendedSemiBold text-xl">
           Have Questions for us?
         </p>
-        <h1 className="font-black text-5xl text-primary">FAQs</h1>
+        <h1 className="font-NeuePlakExtendedBlack text-5xl text-primary">FAQs</h1>
         <p className="text-lg max-w-2xl font-semibold">
           Gain insights and expand your understanding of BuddyRide by finding
           answers to all your questions.

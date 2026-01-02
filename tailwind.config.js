@@ -12,6 +12,15 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
+        NeuePlakRegular: ["NeuePlak"],
+        NeuePlakSemibold: ["NeuePlakSemibold"],
+        NeuePlakBold: ["NeuePlakBold"],
+        NeuePlakBlack: ["NeuePlakBlack"],
+        FontSpringBold: ["FontSpringBold"],
+        FontSpringBoldOne: ["FontSpringBoldOne"],
+        NeuePlakExtendedBold: ["NeuePlakExtendedBold"],
+        NeuePlakExtendedBlack: ["NeuePlakExtendedBlack"],
+        NeuePlakExtendedSemiBold: ["NeuePlakExtendedSemiBold"],
       },
       colors: {
         primary: "#1A20EA",

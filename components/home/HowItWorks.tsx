@@ -16,7 +16,6 @@ import ComingSoonModal from "../Modals/WaitListModal";
 type Props = {};
 
 const HowItWorks = (_props: Props) => {
-  const [email, setEmail] = useState("");
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
   const images = [
     {
@@ -44,7 +43,7 @@ const HowItWorks = (_props: Props) => {
   return (
     <div className="my-20 flex flex-col gap-20 overflow-hidden">
       <div className="sm:mx-20 mx-10 flex flex-col items-center justify-center gap-3 text-center">
-        <h1 className="text-4xl font-black text-primary">How it works</h1>
+        <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">How it works</h1>
         <p className="max-w-xl">
           BuddyRide connects riders with trusted drivers for safe, hassle-free
           trips. Just request, match, and ride!
@@ -62,7 +61,7 @@ const HowItWorks = (_props: Props) => {
                 width={600}
               />
               <div className="absolute bottom-0 z-10 flex h-full flex-col items-baseline justify-end gap-2 rounded-xl bg-gradient-to-t from-black to-transparent p-6">
-                <h1 className="text-3xl font-black text-white">{x.title}</h1>
+                <h1 className="text-3xl font-NeuePlakExtendedBlack text-white">{x.title}</h1>
                 <p className="text-white">{x.desc}</p>
                 <Button
                   onPress={() => setOpenWaitlistModal(true)}

@@ -5,3 +5,52 @@
 body::-webkit-scrollbar {
   display: none;
 }
+
+@font-face {
+  font-family: 'NeuePlak';
+  src: url('/fonts/NeuePlak-Regular.ttf') format('truetype'); 
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeuePlakSemibold';
+  src: url('/fonts/NeuePlak-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeuePlakBold';
+  src: url('/fonts/NeuePlak-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeuePlakBlack';
+  src: url('/fonts/NeuePlak-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeuePlakExtendedBlack';
+  src: url('/fonts/NeuePlak-ExtendedBlack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeuePlakExtendedBold';
+  src: url('/fonts/NeuePlak-ExtendedBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeuePlakExtendedSemiBold';
+  src: url('/fonts/NeuePlak-ExtendedSemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}

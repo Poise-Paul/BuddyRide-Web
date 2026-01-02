@@ -15,6 +15,8 @@ import { Button } from "@heroui/button";
 import { Card, CardBody } from "@heroui/card";
 import { Alert } from "@heroui/alert";
 import Link from "next/link";
+import SocialsComingSoonModal from "@/components/Modals/SocialMediaModal";
+import { useDisclosure } from "@heroui/modal";
 
 const ContactUsPage = () => {
   const [message, setMessage] = useState("");
@@ -22,6 +24,12 @@ const ContactUsPage = () => {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [holdBtn, setHoldBtn] = useState(true);
+
+  const {
+    isOpen: isSocialModalOpen,
+    onOpen: onSocialModalOpen,
+    onOpenChange: onSocialModalChange,
+  } = useDisclosure();
 
   const [alertConfig, setAlertConfig] = useState<{
     isVisible: boolean;
@@ -159,16 +167,12 @@ const ContactUsPage = () => {
                   </p>
                   <div className="flex gap-3 mt-1">
                     <Instagram
-                      onClick={() =>
-                        alert("We'll let you know when our socials are up 😊")
-                      }
+                      onClick={onSocialModalOpen}
                       size={18}
                       className="text-gray-600 cursor-pointer hover:text-primary"
                     />
                     <Twitter
-                      onClick={() =>
-                        alert("We'll let you know when our socials are up 😊")
-                      }
+                      onClick={onSocialModalOpen}
                       size={18}
                       className="text-gray-600 cursor-pointer hover:text-primary"
                     />
@@ -239,6 +243,12 @@ const ContactUsPage = () => {
           </Card>
         </div>
       </div>
+
+      {/* Modals */}
+      <SocialsComingSoonModal
+        isOpen={isSocialModalOpen}
+        onOpenChange={onSocialModalChange}
+      />
     </div>
   );
 };

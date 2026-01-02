@@ -20,10 +20,10 @@ const JoinAsPassenger = (_props: Props) => {
   return (
     <div className="my-20 grid xm:gap-10 sm:grid-cols-2">
       <div className="flex flex-col justify-center gap-4">
-        <h1 className="text-xl font-semibold text-black/30">
+        <h1 className="text-xl font-NeuePlakSemibold text-black/30">
           Become a passenger
         </h1>
-        <h1 className="text-4xl font-black text-primary">
+        <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">
           Join As A Passenger
         </h1>
         <ul className="flex max-w-96 flex-col gap-4">
@@ -41,7 +41,7 @@ const JoinAsPassenger = (_props: Props) => {
       <div>
         <Image alt="join-as-passenger" src="/join-as-passenger.jpg" />
       </div>
-      
+
       {/* Modal */}
       <ComingSoonModal
         isOpen={openWaitlistModal}

@@ -11,11 +11,19 @@ import { Link } from "@heroui/link";
 import { Button } from "@heroui/button";
 import ComingSoonModal from "../Modals/WaitListModal";
 import { usePathname } from "next/navigation";
+import SocialsComingSoonModal from "../Modals/SocialMediaModal";
+import { useDisclosure } from "@heroui/modal";
 
 type Props = {};
 
 const Footer = (props: Props) => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+
+  const {
+    isOpen: isSocialModalOpen,
+    onOpen: onSocialModalOpen,
+    onOpenChange: onSocialModalChange,
+  } = useDisclosure();
 
   const path = usePathname();
 
@@ -31,33 +39,33 @@ const Footer = (props: Props) => {
           height={60}
           width={60}
         />
-        <h1 className="font-semibold">BUDDYRIDE</h1>
+        <h1 className="font-NeuePlakExtendedBold">BUDDYRIDE</h1>
         <div className="border-2 max-w-40 border-t-2 border-primary" />
         <p className="font-semibold text-[#5E6461]">
           The best sharing ride platform in London, UK
         </p>
         <div className="flex gap-3">
-          <Link className="cursor-pointer">
+          <Link onPress={onSocialModalOpen} className="cursor-pointer">
             <div className="h-10 flex justify-center items-center bg-white rounded-full w-10">
               <FaFacebook className="text-primary text-2xl" />
             </div>
           </Link>
-          <Link className="cursor-pointer">
+          <Link onPress={onSocialModalOpen} className="cursor-pointer">
             <div className="bg-white flex justify-center items-center w-10 h-10 rounded-full">
               <FaXTwitter className="text-primary text-2xl" />
             </div>
           </Link>
-          <Link className="cursor-pointer">
+          <Link onPress={onSocialModalOpen} className="cursor-pointer">
             <div className="bg-white flex justify-center items-center h-10 w-10 rounded-full">
               <AiFillInstagram className="text-primary text-2xl" />
             </div>
           </Link>
-          <Link className="cursor-pointer">
+          <Link onPress={onSocialModalOpen} className="cursor-pointer">
             <div className="bg-white h-10 flex justify-center items-center w-10 rounded-full">
               <FaLinkedin className="text-primary text-2xl" />
             </div>
           </Link>
-          <Link className="cursor-pointer">
+          <Link onPress={onSocialModalOpen} className="cursor-pointer">
             <div className="bg-white flex justify-center items-center h-10 w-10 rounded-full">
               <AiOutlineTikTok className="text-primary text-2xl" />
             </div>
@@ -86,7 +94,7 @@ const Footer = (props: Props) => {
           <h1 className="font-semibold">Useful Links</h1>
           <ul className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-3">
             <Link
-              className={`hover:text-primary text-[#5E6461] ${
+              className={`hover:text-primary cursor-pointer text-[#5E6461] ${
                 path === "/about" ? "text-primary font-bold" : ""
               }`}
               href="about"
@@ -95,7 +103,7 @@ const Footer = (props: Props) => {
             </Link>
             <Link
               href="faq"
-              className={`hover:text-primary text-[#5E6461] ${
+              className={`hover:text-primary cursor-pointer text-[#5E6461] ${
                 path === "/faq" ? "text-primary font-bold" : ""
               }`}
             >
@@ -103,7 +111,7 @@ const Footer = (props: Props) => {
             </Link>
             <Link
               href="terms"
-              className={`hover:text-primary text-[#5E6461] ${
+              className={`hover:text-primary cursor-pointer text-[#5E6461] ${
                 path === "/terms" ? "text-primary font-bold" : ""
               }`}
             >
@@ -111,7 +119,7 @@ const Footer = (props: Props) => {
             </Link>
             <Link
               href="privacy"
-              className={`hover:text-primary text-[#5E6461] ${
+              className={`hover:text-primary cursor-pointer text-[#5E6461] ${
                 path === "/privacy" ? "text-primary font-bold" : ""
               }`}
             >
@@ -119,7 +127,7 @@ const Footer = (props: Props) => {
             </Link>
             <Link
               href="contact"
-              className={`hover:text-primary text-[#5E6461] ${
+              className={`hover:text-primary cursor-pointer text-[#5E6461] ${
                 path === "/contact" ? "text-primary font-bold" : ""
               }`}
             >
@@ -127,7 +135,7 @@ const Footer = (props: Props) => {
             </Link>
             <Link
               href="help"
-              className={`hover:text-primary text-[#5E6461] ${
+              className={`hover:text-primary cursor-pointer text-[#5E6461] ${
                 path === "/help" ? "text-primary font-bold" : ""
               }`}
             >
@@ -139,8 +147,22 @@ const Footer = (props: Props) => {
         <div className="">
           <h1 className="font-semibold">Safety</h1>
           <ul className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-3">
-            <li>Driver Safety</li>
-            <li>Passenger Safety</li>
+            <Link
+              className={`hover:text-primary text-[#5E6461] ${
+                path === "/driver" ? "text-primary font-bold" : ""
+              } cursor-pointer`}
+              href="/driver"
+            >
+              Driver Safety
+            </Link>
+            <Link
+              className={`hover:text-primary text-[#5E6461] ${
+                path === "/passenger" ? "text-primary font-bold" : ""
+              } cursor-pointer `}
+              href="/passenger"
+            >
+              Passenger Safety
+            </Link>
           </ul>
         </div>
         <div className="">
@@ -163,6 +185,10 @@ const Footer = (props: Props) => {
       <ComingSoonModal
         isOpen={openWaitlistModal}
         onClose={() => setOpenWaitlistModal(false)}
+      />
+      <SocialsComingSoonModal
+        isOpen={isSocialModalOpen}
+        onOpenChange={onSocialModalChange}
       />
     </div>
   );

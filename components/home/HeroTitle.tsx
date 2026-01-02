@@ -10,10 +10,10 @@ const HeroTitle = (_props: Props) => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
   return (
     <div className="flex flex-col gap-5 text-center">
-      <p className="text-xl font-semibold text-black/30">
+      <p className="text-xl font-NeuePlakExtendedBold text-black/30">
         Welcome to BuddyRide
       </p>
-      <h1 className="text-4xl font-black text-primary">
+      <h1 className="text-4xl font-black font-NeuePlakExtendedBlack text-primary">
         Find a Ride. Share the Journey. Save Money.
       </h1>
       <p className="text-center">

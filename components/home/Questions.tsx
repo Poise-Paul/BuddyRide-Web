@@ -95,11 +95,11 @@ const Questions = (_props: Props) => {
         </div>
       )}
       <div className="flex flex-col gap-2 text-center">
-        <h1 className="text-xl font-semibold text-black/30">
+        <h1 className="text-xl font-NeuePlakSemibold text-black/30">
           Write us a message
         </h1>
 
-        <h1 className="sm:text-4xl text-2xl font-black text-primary">
+        <h1 className="sm:text-4xl text-2xl font-NeuePlakExtendedBlack text-primary">
           Have Any Questions?
         </h1>
         <h1 className="sm:text-4xl text-2xl">Don’t Hesitate To Contact Us</h1>

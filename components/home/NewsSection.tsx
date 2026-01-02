@@ -12,12 +12,12 @@ const NewsSection = (_props: Props) => {
       date: "03/06/2025",
     },
     {
-      img: "/news-03.jpg",
+      img: "/drivers.jpg",
       title: "Meet Our Drivers: Stories from the People Behind BuddyRide",
       date: "07/06/2025",
     },
     {
-      img: "/news-04.jpg",
+      img: "/work-person-04.jpg",
       title: "Why Ride-Sharing is the Smart Choice for Commuters in the UK",
       date: "20/06/2025",
     },
@@ -26,7 +26,9 @@ const NewsSection = (_props: Props) => {
   return (
     <div className="mb-20 mt-64 xm:mt-[90rem] flex flex-col items-center">
       <div className="flex flex-col gap-3 text-center">
-        <h1 className="text-black/30 font-NeuePlakExtendedSemiBold">BuddyRide blogs and News</h1>
+        <h1 className="text-black/30 font-NeuePlakExtendedSemiBold">
+          BuddyRide blogs and News
+        </h1>
         <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">
           Latest BuddyRide Blog
         </h1>
@@ -69,10 +71,10 @@ const NewsSection = (_props: Props) => {
                 alt="news-second"
                 src={x.img}
                 width={600}
-                className="object-cover h-44 sm:h-24"
+                className="object-cover sm:h-28"
               />
 
-              <div className="col-span-2 gap-1">
+              <div className="md:col-span-2 gap-1">
                 <h1 className="text-sm font-bold">{x.title}</h1>
                 <small className="text-tiny font-semibold text-black/50">
                   {x.date}

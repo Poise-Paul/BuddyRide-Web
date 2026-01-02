@@ -31,27 +31,24 @@ export const siteConfig = {
       href: "/",
     },
     {
+      label: "About Us",
+      href: "/about",
+    },
+    {
       label: "FAQ",
-      href: "/",
+      href: "/faq",
     },
     {
-      label: "How it works",
-      href: "/",
+      label: "Privacy Policy",
+      href: "/privacy",
     },
     {
-      label: "BuddyRide General Terms",
-      href: "/",
+      label: "Terms of service",
+      href: "/terms",
     },
     {
       label: "Cancellation & Refund Policy",
-      href: "/",
+      href: "/refund",
     },
   ],
-  links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
-  },
 };

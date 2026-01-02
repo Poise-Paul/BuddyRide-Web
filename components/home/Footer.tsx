@@ -141,6 +141,14 @@ const Footer = (props: Props) => {
             >
               Help Center
             </Link>
+            <Link
+              href="refund"
+              className={`hover:text-primary cursor-pointer text-[#5E6461] ${
+                path === "/refund" ? "text-primary font-bold" : ""
+              }`}
+            >
+              Refunds & Cancellations
+            </Link>
           </ul>
         </div>
 

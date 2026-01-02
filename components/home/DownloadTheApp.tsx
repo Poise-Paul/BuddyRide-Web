@@ -30,7 +30,7 @@ const DownloadTheApp = () => {
     <div className="flex relative w-full sm:mb-80 xm:mt-96 flex-col">
       <div className="flex mx-20 gap-10">
         <div className="flex items-center justify-center">
-          <Image alt="download-the-app" className="w-[25rem]" src="/download-app-01.png" />
+          <Image alt="download-the-app" className="w-[25rem]" src="/download-app-01.jpg" />
         </div>
         <div className="flex max-w-xl flex-col gap-4 justify-center">
           <h1 className="text-xl font-NeuePlakExtendedSemiBold text-black/30">

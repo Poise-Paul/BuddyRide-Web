@@ -24,7 +24,7 @@ const NewsSection = (_props: Props) => {
   ];
 
   return (
-    <div className="mb-20 mt-64 flex flex-col items-center">
+    <div className="mb-20 mt-64 xm:mt-[90rem] flex flex-col items-center">
       <div className="flex flex-col gap-3 text-center">
         <h1 className="text-black/30 font-NeuePlakExtendedSemiBold">BuddyRide blogs and News</h1>
         <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">
@@ -32,7 +32,7 @@ const NewsSection = (_props: Props) => {
         </h1>
       </div>
 
-      <div className="my-20 xm:mt-28 flex xm:flex-col gap-5">
+      <div className="my-20 xm:mt-16 flex xm:flex-col gap-5">
         <div className="flex xm:flex-col rounded-2xl drop-shadow-lg">
           <div className="flex sm:rounded-xl">
             <Image

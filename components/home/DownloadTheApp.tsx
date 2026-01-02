@@ -1,7 +1,13 @@
+"use client";
+import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
-import React from "react";
+import Link from "next/link";
+import ComingSoonModal from "../Modals/WaitListModal";
+import { useState } from "react";
 
 const DownloadTheApp = () => {
+  const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+
   const testimonials = [
     {
       desc: "I love how reliable BuddyRide is. Whether I’m heading to the airport or just around town, I always find a comfortable ride at a great price!",
@@ -27,16 +33,20 @@ const DownloadTheApp = () => {
   ];
 
   return (
-    <div className="flex relative w-full sm:mb-80 xm:mt-96 flex-col">
-      <div className="flex mx-20 gap-10">
+    <div className="flex relative w-full sm:mb-80  flex-col">
+      <div className="flex xm:flex-col xm:top-[200rem] md:mx-20 sm:mx-10 gap-10">
         <div className="flex items-center justify-center">
-          <Image alt="download-the-app" className="w-[25rem]" src="/download-app-01.jpg" />
+          <Image
+            alt="download-the-app"
+            className="w-[25rem]"
+            src="/download-app-01.jpg"
+          />
         </div>
-        <div className="flex max-w-xl flex-col gap-4 justify-center">
+        <div className="flex max-w-xl xm:text-center flex-col gap-4 justify-center">
           <h1 className="text-xl font-NeuePlakExtendedSemiBold text-black/30">
             Join your buddies today
           </h1>
-          <h1 className="text-4xl mt-4 font-black text-primary">
+          <h1 className="text-4xl mt-4 font-NeuePlakExtendedBlack text-primary">
             Download BuddyRide
           </h1>
           <p>
@@ -50,19 +60,24 @@ const DownloadTheApp = () => {
               className="w-40"
               radius="none"
               src="/app-store.png"
+              onClick={() => setOpenWaitlistModal(true)}
             />
+
             <Image
               alt="play-store-logo"
               className="w-40"
               radius="none"
               src="/play-store.png"
+              onClick={() => setOpenWaitlistModal(true)}
             />
           </div>
         </div>
       </div>
 
-      <div className="absolute z-10 -bottom-[29rem] w-full flex flex-col items-center justify-center gap-4 rounded-2xl bg-[#F3F5F7] sm:p-20 p-10 text-center">
-        <h1 className="text-2xl font-NeuePlakExtendedSemiBold text-black/30">Testimonials</h1>
+      <div className="absolute z-10 -bottom-[29rem] xm:-bottom-[83rem] w-full flex flex-col items-center justify-center gap-4 rounded-2xl bg-[#F3F5F7] sm:p-20 p-10 text-center">
+        <h1 className="text-2xl font-NeuePlakExtendedSemiBold text-black/30">
+          Testimonials
+        </h1>
         <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">
           What People are saying
         </h1>
@@ -99,6 +114,12 @@ const DownloadTheApp = () => {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <ComingSoonModal
+        isOpen={openWaitlistModal}
+        onClose={() => setOpenWaitlistModal(false)}
+      />
     </div>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import { Image } from "@heroui/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
@@ -28,7 +28,7 @@ const Footer = (props: Props) => {
   const path = usePathname();
 
   return (
-    <div className="bg-[#F3F5F7] overflow-hidden relative sm:mx-20 my-10 rounded-3xl flex xm:flex-col gap-40 px-10 py-20">
+    <div className="bg-[#F3F5F7] overflow-hidden relative sm:mx-20 my-10 rounded-3xl flex xm:flex-col md:gap-40 gap-24 px-10 py-20">
       <div className="flex flex-col gap-3">
         <Image
           onClick={() => (window.location.href = "/")}

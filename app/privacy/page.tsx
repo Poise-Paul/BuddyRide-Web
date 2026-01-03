@@ -35,7 +35,7 @@ const PrivacyPolicy = () => {
         <section className="mb-16">
           <div className="flex items-center gap-3 mb-6">
             <Database className="text-blue-600" size={28} />
-            <h2 className="text-3xl font-bold text-slate-900">
+            <h2 className="text-3xl text-left font-bold text-slate-900">
               1. What Information We Collect
             </h2>
           </div>
@@ -104,7 +104,7 @@ const PrivacyPolicy = () => {
 
         {/* --- Section 4: Security (Feature Box) --- */}
         <section className="bg-slate-900 text-white p-8 rounded-3xl mb-16 flex flex-col md:flex-row items-center gap-8">
-          <div className="bg-blue-600 p-4 rounded-2xl">
+          <div className="bg-primary p-4 rounded-2xl">
             <Lock size={40} />
           </div>
           <div>
@@ -137,7 +137,7 @@ const PrivacyPolicy = () => {
         </section>
 
         {/* --- Contact / Support --- */}
-        <section className="bg-blue-50 border border-blue-100 p-10 rounded-3xl text-center">
+        <section className="bg-blue-50 border border-blue-100 md:p-10 p-6 rounded-3xl text-center">
           <h2 className="text-2xl font-bold text-slate-900 mb-2">
             Privacy Concerns?
           </h2>
@@ -146,7 +146,7 @@ const PrivacyPolicy = () => {
           </p>
           <a
             href="mailto:support@buddyridenow.com"
-            className="inline-block bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors"
+            className="inline-block bg-primary text-white md:px-8 px-4 py-3 rounded-full font-bold hover:bg-blue-700 transition-colors"
           >
             support@buddyridenow.com
           </a>

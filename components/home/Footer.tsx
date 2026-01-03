@@ -186,7 +186,7 @@ const Footer = (props: Props) => {
       {/* Footer Messages */}
       <div className="absolute bottom-0 pb-5 left-0 right-0 flex justify-center">
         <p className="text-sm text-[#5E6461]">
-          © 2023 BuddyRide. All rights reserved.
+          © 2025 BuddyRide. All rights reserved.
         </p>
       </div>
       {/* Modal */}

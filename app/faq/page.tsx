@@ -24,7 +24,7 @@ const FaqPage = () => {
 
   return (
     <div className="bg-white text-left">
-      <div className="max-w-xl mx-auto mb-10">
+      <div className="md:max-w-xl xm:max-w-sm mx-auto mb-10">
         <Input
           placeholder="Search for a question..."
           value={searchQuery}
@@ -33,7 +33,15 @@ const FaqPage = () => {
           startContent={<SearchIcon className="text-gray-400" />}
           isClearable
           variant="bordered"
+          color="primary" // This automatically sets the focus border to blue
           className="font-NeuePlakRegular"
+          classNames={{
+            inputWrapper: [
+              "border-1", // Default border thickness
+              "group-data-[focus=true]:border-primary", // Ensure this matches your Tailwind blue
+              "group-data-[focus=true]:border-2",
+            ],
+          }}
         />
       </div>
       <FAQ filteredList={filteredList} />

@@ -47,6 +47,22 @@ export const siteConfig = {
       href: "/terms",
     },
     {
+      label: "Help Center",
+      href: "/help",
+    },
+    {
+      label: "Contact Us",
+      href: "/contact",
+    },
+    {
+      label: "Passenger's Safety",
+      href: "/passenger",
+    },
+    {
+      label: "Driver's Safety",
+      href: "/driver",
+    },
+    {
       label: "Cancellation & Refund Policy",
       href: "/refund",
     },

@@ -17,13 +17,20 @@ import { SearchIcon } from "@/components/icons";
 import { Image } from "@heroui/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
+
   const searchInput = (
     <Input
       aria-label="Search"
+      value={searchQuery}
+      onChange={(e) => setSearchQuery(e.target.value)}
       classNames={{
-        inputWrapper: "bg-default-100",
+        inputWrapper:
+          "bg-default-100 group-data-[focused=true]:border-blue-600", // Blue focus!
         input: "text-sm",
       }}
       endContent={
@@ -33,6 +40,12 @@ export const Navbar = () => {
       }
       labelPlacement="outside"
       placeholder="Search..."
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          router.push(`/search?q=${searchQuery}`);
+          setIsMenuOpen(false); // Close the navbar menu
+        }
+      }}
       startContent={
         <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
       }
@@ -42,6 +55,11 @@ export const Navbar = () => {
 
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Filter your nav items based on the input
+  const filteredMenuItems = siteConfig.navMenuItems.filter((item) =>
+    item.label.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -93,7 +111,7 @@ export const Navbar = () => {
       <NavbarMenu>
         {searchInput}
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
+          {filteredMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
                 color={

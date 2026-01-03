@@ -87,7 +87,7 @@ const PrivacyPolicy = () => {
           <section>
             <div className="flex items-center gap-3 mb-4">
               <Users className="text-blue-600" size={24} />
-              <h2 className="text-2xl font-bold text-slate-900">
+              <h2 className="text-2xl text-left font-bold text-slate-900">
                 3. Sharing Information
               </h2>
             </div>

@@ -1,25 +1,30 @@
 "use client";
 
 import { Button } from "@heroui/button";
-import { Textarea } from "@heroui/input";
+import { Input, Textarea } from "@heroui/input";
 import { BsFillSendFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
 import { Alert } from "@heroui/alert";
+import api from "@/utils/axios";
+import axios from "axios";
+import { ErrorResponse } from "@/types";
 
 type Props = {};
 
 const Questions = (_props: Props) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [holdBtn, setHoldBtn] = useState(true);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (message.trim().length > 0) {
+    if (message.trim().length > 0 && email && name) {
       setHoldBtn(false);
     } else {
       setHoldBtn(true);
     }
-  }, [message]);
+  }, [message, email, name]);
 
   const [alertConfig, setAlertConfig] = useState<{
     isVisible: boolean;
@@ -32,43 +37,54 @@ const Questions = (_props: Props) => {
   });
 
   const sendMessage = async () => {
-    setLoading(true);
-    if (!message.trim()) return;
-
-    setHoldBtn(true);
-
-    // PostMail JSON endpoint data structure
-    const data = {
-      access_token: "g5ywtqwas4iu8kife2vobhc5",
-      subject: "BuddyRide Website Inquiry",
-      text: message,
-    };
-
-    try {
-      const response = await fetch("https://postmail.invotes.com/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        setAlertConfig({
-          isVisible: true,
-          type: "success",
-          message: "Message sent successfully!",
-        });
-        setMessage("");
-      } else {
-        // This will now catch the "send" errors shown in your console
-        throw new Error("Server rejected the email");
-      }
-    } catch (error) {
+    // Basic validation
+    if (!message.trim() || !email.trim() || !name.trim()) {
       setAlertConfig({
         isVisible: true,
         type: "danger",
-        message: "Failed to send message. Please try again later.",
+        message: "Please fill in all fields.",
+      });
+      return;
+    }
+
+    setLoading(true);
+    setHoldBtn(true);
+
+    try {
+      // 1. Using your internal endpoint
+      const response = await api.post("api/users/contact/support", {
+        title: "Website Inquiry",
+        full_name: name.trim(),
+        email: email.trim(),
+        message: message.trim(),
+      });
+
+      if (response.data.status) {
+        setAlertConfig({
+          isVisible: true,
+          type: "success",
+          message: response.data.message || "Message sent successfully!",
+        });
+        // Clear all fields
+        setName("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch (error: unknown) {
+      let finalMessage = "Failed to send message. Please try again later.";
+
+      if (axios.isAxiosError(error)) {
+        // 2. Access the nested 'error' object as seen in your browser preview
+        const serverError = error.response?.data?.error as ErrorResponse;
+        finalMessage = serverError?.message || error.message;
+
+        console.log(`Contact Support Error Code: ${serverError?.status_code}`);
+      }
+
+      setAlertConfig({
+        isVisible: true,
+        type: "danger",
+        message: finalMessage,
       });
     } finally {
       setLoading(false);
@@ -79,6 +95,7 @@ const Questions = (_props: Props) => {
       );
     }
   };
+
   return (
     <div className="my-20 flex items-center justify-center">
       {alertConfig.isVisible && (
@@ -104,7 +121,24 @@ const Questions = (_props: Props) => {
         </h1>
         <h1 className="sm:text-4xl text-2xl">Don’t Hesitate To Contact Us</h1>
 
-        <div className="my-2">
+        <div className="my-2 gap-4 flex flex-col">
+          <div className="flex gap-3 flex-row">
+            <Input
+              label="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              variant="bordered"
+              classNames={{ inputWrapper: "bg-white drop-shadow-sm" }}
+            />
+            <Input
+              label="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              variant="bordered"
+              classNames={{ inputWrapper: "bg-white drop-shadow-sm" }}
+            />
+          </div>
+
           <Textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}

@@ -2,6 +2,7 @@
 import { Alert } from "@heroui/alert";
 import { Button } from "@heroui/button";
 import { Input } from "@heroui/input";
+import axios from "axios";
 import {
   Modal,
   ModalContent,
@@ -11,6 +12,8 @@ import {
   useDisclosure,
 } from "@heroui/modal";
 import React, { useEffect, useMemo, useState } from "react";
+import api from "@/utils/axios";
+import { ErrorResponse } from "@/types";
 
 type ComingSoonModalProps = { isOpen: boolean; onClose?: () => void };
 
@@ -38,48 +41,61 @@ export default function ComingSoonModal({
   }, [email]);
 
   const handleJoinWaitlist = async () => {
-    setLoading(true);
+    // Validate presence of email before starting
     if (!email.trim()) return;
 
+    setLoading(true);
     setHoldBtn(true);
 
-    // PostMail JSON endpoint data structure
-    const data = {
-      access_token: "g5ywtqwas4iu8kife2vobhc5",
-      subject: "BuddyRide App WaitList",
-      text: email,
-    };
-
     try {
-      const response = await fetch("https://postmail.invotes.com/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
+      // Axios handles stringifying and headers automatically
+      const response = await api.post("api/users/wait-list/add", {
+        email: `${email.trim()}`,
       });
 
-      if (response.ok) {
+      const result = response.data;
+
+      if (result.status) {
         setAlertConfig({
           isVisible: true,
           type: "success",
-          message: "Message sent successfully!",
+          message: "Success! You've been added.",
         });
         setEmail("");
       } else {
-        // This will now catch the "send" errors shown in your console
-        throw new Error("Server rejected the email");
+        // Handle cases where the server returns status: false
+        throw new Error(result.message || "Unable to join waitlist.");
       }
-    } catch (error) {
+    } catch (error: unknown) {
+      let finalMessage = "Connection failed. Please try again.";
+
+      if (axios.isAxiosError(error)) {
+        // 1. Access the nested 'error' object from the response data
+        const serverError = error.response?.data?.error as ErrorResponse;
+
+        // 2. Use the nested message or fall back to Axios default
+        finalMessage = serverError?.message || error.message;
+
+        // 3. Log the nested status code
+        console.log(`Error Code: ${serverError?.status_code}`);
+      } else if (error instanceof Error) {
+        finalMessage = error.message;
+      }
+
+      console.log("Message ->", finalMessage);
+
       setAlertConfig({
         isVisible: true,
         type: "danger",
-        message: "Failed to send message. Please try again later.",
+        message: finalMessage,
       });
     } finally {
+      // Cleanup UI states
       onClose && onClose();
       setLoading(false);
       setHoldBtn(false);
+
+      // Auto-hide alert after 5 seconds
       setTimeout(
         () => setAlertConfig((prev) => ({ ...prev, isVisible: false })),
         5000

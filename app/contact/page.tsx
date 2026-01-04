@@ -17,6 +17,9 @@ import { Alert } from "@heroui/alert";
 import Link from "next/link";
 import SocialsComingSoonModal from "@/components/Modals/SocialMediaModal";
 import { useDisclosure } from "@heroui/modal";
+import api from "@/utils/axios";
+import axios from "axios";
+import { ErrorResponse } from "@/types";
 
 const ContactUsPage = () => {
   const [message, setMessage] = useState("");
@@ -41,46 +44,65 @@ const ContactUsPage = () => {
     message: "",
   });
 
-  const handleSendMessage = async () => {
-    if (!message || !email) return;
-    setLoading(true);
-
-    const formData = new FormData();
-    formData.append("access_token", "g5ywtqwas4iu8kife2vobhc5");
-    formData.append("subject", `New BuddyRide Inquiry from ${email}`);
-    formData.append("text", message);
-
-    try {
-      await fetch("https://postmail.invotes.com/send", {
-        method: "POST",
-        body: formData,
-        mode: "no-cors",
-      });
-      setAlertConfig({
-        isVisible: true,
-        type: "success",
-        message: "Message sent! Our team will get back to you shortly.",
-      });
-      setMessage("");
-      setEmail("");
-    } catch (error) {
+  const sendMessage = async () => {
+    // Basic validation
+    if (!message.trim() || !email.trim() || !fullName.trim()) {
       setAlertConfig({
         isVisible: true,
         type: "danger",
-        message: "Something went wrong. Please try again later.",
+        message: "Please fill in all fields.",
+      });
+      return;
+    }
+
+    setLoading(true);
+    setHoldBtn(true);
+
+    try {
+      // 1. Using your internal endpoint
+      const response = await api.post("api/users/contact/support", {
+        title: "Website Enquiry",
+        full_name: fullName.trim(),
+        email: email.trim(),
+        message: message.trim(),
+      });
+
+      if (response.data.status) {
+        setAlertConfig({
+          isVisible: true,
+          type: "success",
+          message: response.data.message || "Message sent successfully!",
+        });
+        // Clear all fields
+        setFullName("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch (error: unknown) {
+      let finalMessage = "Failed to send message. Please try again later.";
+
+      if (axios.isAxiosError(error)) {
+        // 2. Access the nested 'error' object as seen in your browser preview
+        const serverError = error.response?.data?.error as ErrorResponse;
+        finalMessage = serverError?.message || error.message;
+
+        console.log(`Contact Support Error Code: ${serverError?.status_code}`);
+      }
+
+      setAlertConfig({
+        isVisible: true,
+        type: "danger",
+        message: finalMessage,
       });
     } finally {
-      setFullName("");
-      setMessage("");
-      setEmail("");
       setLoading(false);
+      setHoldBtn(false);
       setTimeout(
-        () => setAlertConfig({ ...alertConfig, isVisible: false }),
+        () => setAlertConfig((prev) => ({ ...prev, isVisible: false })),
         5000
       );
     }
   };
-
   useEffect(() => {
     if (email && message && fullName) {
       setHoldBtn(false);
@@ -235,7 +257,7 @@ const ContactUsPage = () => {
                 endContent={!loading && <Send size={20} />}
                 isLoading={loading}
                 spinnerPlacement="end"
-                onPress={handleSendMessage}
+                onPress={sendMessage}
               >
                 {loading ? "Sending..." : "Send Message"}
               </Button>

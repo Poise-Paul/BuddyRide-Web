@@ -9,20 +9,40 @@ export const siteConfig = {
       href: "/",
     },
     {
-      label: "FAQ",
-      href: "/",
+      label: "About Us",
+      href: "/about",
     },
     {
-      label: "How it works",
-      href: "/",
+      label: "FAQ",
+      href: "/faq",
+    },
+    {
+      label: "Privacy Policy",
+      href: "/privacy",
+    },
+    {
+      label: "Terms of service",
+      href: "/terms",
+    },
+    {
+      label: "Help Center",
+      href: "/help",
+    },
+    {
+      label: "Contact Us",
+      href: "/contact",
+    },
+    {
+      label: "Passenger's Safety",
+      href: "/passenger",
+    },
+    {
+      label: "Driver's Safety",
+      href: "/driver",
     },
     {
       label: "Cancellation & Refund Policy",
-      href: "/",
-    },
-    {
-      label: "BuddyRide General Terms",
-      href: "/",
+      href: "/refund",
     },
   ],
   navMenuItems: [

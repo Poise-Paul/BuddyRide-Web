@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/home/Footer";
+import axios from "axios";
 
 export const metadata: Metadata = {
   title: {

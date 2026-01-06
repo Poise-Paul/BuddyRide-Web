@@ -57,7 +57,7 @@ export const accordionList = [
   },
   {
     quest: "Who can drive for BuddyRide?",
-    ans: "Drivers must have a valid driving licence, a road-legal vehicle (with valid MOT in the UK) if you reside in the UK, and insurance. You must be 18+ and pass our verification checks.",
+    ans: "Drivers must have a valid driving licence, a road-worthy vehicle (with valid MOT in the UK) if you reside in the UK, and insurance. You must be 18+ and pass our verification checks.",
   },
   {
     quest: "I have an issue. How do I contact support?",
@@ -119,7 +119,7 @@ const FAQ = ({ filteredList }: Props) => {
   //   },
   //   {
   //     quest: "Who can drive for BuddyRide?",
-  //     ans: "Drivers must have a valid driving licence, a road-legal vehicle (with valid MOT in the UK) if you reside in the UK, and insurance. You must be 18+ and pass our verification checks.",
+  //     ans: "Drivers must have a valid driving licence, a road-worthy vehicle (with valid MOT in the UK) if you reside in the UK, and insurance. You must be 18+ and pass our verification checks.",
   //   },
   //   {
   //     quest: "I have an issue. How do I contact support?",

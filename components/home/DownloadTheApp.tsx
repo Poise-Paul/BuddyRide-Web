@@ -50,7 +50,7 @@ const DownloadTheApp = () => {
             Download BuddyRide
           </h1>
           <p>
-            Get where you need to go—fast, safe, and hassle-free. Download the
+            Get to where you need to go—fast, safe, and hassle-free. Download the
             BuddyRide app today and connect with trusted drivers for smooth,
             convenient rides whenever you need them!
           </p>

@@ -1,4 +1,6 @@
+import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
+import { Link } from "@heroui/link";
 import React from "react";
 
 type Props = {};
@@ -50,17 +52,29 @@ const NewsSection = (_props: Props) => {
               <p className="text-black/50">03/06/2025</p>
             </div>
             <h1 className="text-2xl font-bold">
-              The Future of Ride-Sharing: <br /> How BuddyRide is Changing the
-              Game
+              The Future of Urban Mobility in the UK and Nigeria
             </h1>
             <p className="text-lg text-black/50">
-              Ride-sharing has transformed urban mobility, making transportation
-              more flexible and accessible. BuddyRide takes it further by
-              ensuring safety, affordability, and convenience, connecting riders
-              with trusted drivers for a seamless experience. Discover how
-              BuddyRide is reshaping the industry with reliable service and a
-              customer-first approach...
+              In bustling cities like London and Lagos, traditional ride-sharing
+              apps are struggling to keep pace with the realities of urban life.
+              High traffic congestion, rising costs, and safety concerns have
+              exposed the limits of conventional models. Riders are left
+              frustrated, while drivers face mounting challenges. Enter
+              BuddyRide—a platform designed to reimagine mobility for local
+              needs, not just global trends...
             </p>
+            <Button
+              as={Link}
+              href="https://medium.com/@buddyrideofficial/the-future-of-urban-mobility-in-the-uk-and-nigeria-0896174b4886"
+              isExternal
+              showAnchorIcon
+              target="_blank"
+              variant="flat"
+              color="primary"
+              className="font-NeuePlakSemibold"
+            >
+              Read full story
+            </Button>
           </div>
         </div>
 

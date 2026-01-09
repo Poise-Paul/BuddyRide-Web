@@ -176,7 +176,7 @@ const Footer = (props: Props) => {
         <div className="">
           <h1 className="font-semibold">Address</h1>
           <p className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-3">
-            32 Salix Court Whitebeam Close Salford M6 5HL
+            32 Salix Court Whitebeam Close Salford M6 5HL, United Kingdom
           </p>
         </div>
       </div>

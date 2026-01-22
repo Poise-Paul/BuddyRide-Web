@@ -10,7 +10,7 @@ import Questions from "@/components/home/Questions";
 
 export default function Home() {
   return (
-    <section className="flex  flex-col items-center justify-center gap-4 py-8 md:py-10">
+    <section className="flex flex-col items-center justify-center gap-4 md:py-10">
       <HeroTitle />
       <div className="w-screen">
         <Image radius="none" src="/Car-trip.jpg" alt="car-trip" className="" />
@@ -20,8 +20,10 @@ export default function Home() {
       <JoinAsPassenger />
       <DownloadTheApp />
       <NewsSection />
-      <FAQ />
-      <Questions />
+      {/* <FAQ /> */} 
+      {/* <Questions /> */}
     </section>
   );
 }
+
+// FAQ & Questions Has Been hidden to reduce the length of the screen

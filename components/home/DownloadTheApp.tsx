@@ -46,7 +46,7 @@ const DownloadTheApp = () => {
           <h1 className="text-xl font-NeuePlakExtendedSemiBold text-black/30">
             Join your buddies today
           </h1>
-          <h1 className="text-4xl mt-4 font-NeuePlakExtendedBlack text-primary">
+          <h1 className="md:text-4xl text-3xl mt-4 font-NeuePlakExtendedBlack text-primary">
             Download BuddyRide
           </h1>
           <p>
@@ -54,10 +54,10 @@ const DownloadTheApp = () => {
             BuddyRide app today and connect with trusted drivers for smooth,
             convenient rides whenever you need them!
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex justify-center items-center gap-4">
             <Image
               alt="app-store-logo"
-              className="w-40"
+              className="md:w-40 w-32"
               radius="none"
               src="/app-store.png"
               onClick={() => setOpenWaitlistModal(true)}
@@ -65,7 +65,7 @@ const DownloadTheApp = () => {
 
             <Image
               alt="play-store-logo"
-              className="w-40"
+              className="md:w-40 w-32"
               radius="none"
               src="/play-store.png"
               onClick={() => setOpenWaitlistModal(true)}
@@ -78,7 +78,7 @@ const DownloadTheApp = () => {
         <h1 className="text-2xl font-NeuePlakExtendedSemiBold text-black/30">
           Testimonials
         </h1>
-        <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">
+        <h1 className="md:text-4xl text-3xl font-NeuePlakExtendedBlack text-primary">
           What People are saying
         </h1>
         <div className="my-20 grid xm:gap-16 sm:grid-cols-3 gap-5">

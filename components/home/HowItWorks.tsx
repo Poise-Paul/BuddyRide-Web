@@ -9,7 +9,7 @@ import {
 } from "@heroui/modal";
 import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Input } from "@heroui/input";
 import ComingSoonModal from "../Modals/WaitListModal";
 
@@ -40,10 +40,26 @@ const HowItWorks = (_props: Props) => {
     },
   ];
 
+  function useWindowSize() {
+    const [isSmall, setIsSmall] = useState(false);
+
+    useEffect(() => {
+      const checkSize = () => setIsSmall(window.innerWidth < 768);
+      checkSize(); // Run on mount
+      window.addEventListener("resize", checkSize);
+      return () => window.removeEventListener("resize", checkSize);
+    }, []);
+
+    return isSmall;
+  }
+
+  const isSmall = useWindowSize();
   return (
-    <div className="my-20 flex flex-col gap-20 overflow-hidden">
-      <div className="sm:mx-20 mx-10 flex flex-col items-center justify-center gap-3 text-center">
-        <h1 className="text-4xl font-NeuePlakExtendedBlack text-primary">How it works</h1>
+    <div className="md:my-20 my-12 flex flex-col gap-20 overflow-hidden">
+      <div className="sm:mx-20 flex flex-col items-center justify-center gap-3 text-center">
+        <h1 className="md:text-4xl text-2xl font-NeuePlakExtendedBlack text-primary">
+          How it works
+        </h1>
         <p className="max-w-xl">
           BuddyRide connects riders with trusted drivers for safe, hassle-free
           trips. Just request, match, and ride!
@@ -56,16 +72,19 @@ const HowItWorks = (_props: Props) => {
               <Image
                 alt={`work-person-0${key}`}
                 className="object-cover"
-                height={420}
                 src={x.img}
-                width={600}
+                height={isSmall ? 320 : 420}
+                width={isSmall ? 500 : 600}
               />
               <div className="absolute bottom-0 z-10 flex h-full flex-col items-baseline justify-end gap-2 rounded-xl bg-gradient-to-t from-black to-transparent p-6">
-                <h1 className="text-3xl font-NeuePlakExtendedBlack text-white">{x.title}</h1>
-                <p className="text-white">{x.desc}</p>
+                <h1 className="md:text-3xl text-2xl font-NeuePlakExtendedBlack text-white">
+                  {x.title}
+                </h1>
+                <p className="text-white md:text-base">{x.desc}</p>
                 <Button
                   onPress={() => setOpenWaitlistModal(true)}
                   className="w-fit bg-primary text-white"
+                  size={isSmall ? "sm" : "md"}
                   radius="sm"
                 >
                   Get Started

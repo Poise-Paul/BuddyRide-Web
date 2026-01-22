@@ -71,11 +71,11 @@ const NewsSection = (_props: Props) => {
               <h1 className="font-bold xm:text-sm">News</h1>
               <p className="text-black/50 xm:text-sm">03/06/2025</p>
             </div>
-            <h1 className="md:text-2xl text-xl font-bold">
+            <h1 className="md:text-2xl text-lg font-bold">
               The Future of Urban Mobility in the UK and Nigeria
             </h1>
             {isSmall ? (
-              <p className="text-base text-black/50">
+              <p className="text-sm text-black/50">
                 In bustling cities like London and Lagos, traditional
                 ride-sharing apps are struggling to keep pace with the realities
                 of urban life...

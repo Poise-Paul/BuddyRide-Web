@@ -4,11 +4,14 @@ import { Image } from "@heroui/image";
 import React, { useEffect, useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import ComingSoonModal from "../Modals/WaitListModal";
+import DownloadOnMobileModal from "../Modals/DesktopModal";
 
 type Props = {};
 
 const JoinAsDriver = (_props: Props) => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+  const [device, setDevice] = useState("desktop");
+  const [showMobileModal, setShowMobileModal] = useState(false);
 
   const list = [
     "Create Rides for passengers/customers to join for long journeys or short.",
@@ -31,6 +34,27 @@ const JoinAsDriver = (_props: Props) => {
 
   const isSmall = useWindowSize();
 
+  // Download App
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) setDevice("android");
+    else if (/iPad|iPhone|iPod/.test(ua)) setDevice("ios");
+  }, []);
+
+  const openApp = () => {
+    if (device === "ios") {
+      window.location.href =
+        "https://apps.apple.com/us/app/buddyride/id6751210259";
+      return;
+    } else if (device === "android") {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.elonpaul.buddyrideapp";
+      return;
+    } else if (device === "desktop") {
+      setShowMobileModal(true);
+    }
+  };
+
   return (
     <div className="md:my-20 my-10 grid sm:grid-cols-2 md:gap-20 gap-10">
       <div>
@@ -52,7 +76,7 @@ const JoinAsDriver = (_props: Props) => {
           ))}
         </ul>
         <Button
-          onPress={() => setOpenWaitlistModal(true)}
+          onPress={openApp}
           size={isSmall ? "sm" : "md"}
           className="w-fit rounded-lg bg-primary px-10 text-white"
         >
@@ -64,6 +88,10 @@ const JoinAsDriver = (_props: Props) => {
       <ComingSoonModal
         isOpen={openWaitlistModal}
         onClose={() => setOpenWaitlistModal(false)}
+      />
+      <DownloadOnMobileModal
+        isOpen={showMobileModal}
+        onOpenChange={() => setShowMobileModal(false)}
       />
     </div>
   );

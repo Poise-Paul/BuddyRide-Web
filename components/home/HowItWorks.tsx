@@ -12,11 +12,15 @@ import { Image } from "@heroui/image";
 import React, { useEffect, useState } from "react";
 import { Input } from "@heroui/input";
 import ComingSoonModal from "../Modals/WaitListModal";
+import DownloadOnMobileModal from "../Modals/DesktopModal";
 
 type Props = {};
 
 const HowItWorks = (_props: Props) => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+  const [device, setDevice] = useState("desktop");
+  const [showMobileModal, setShowMobileModal] = useState(false);
+
   const images = [
     {
       title: "Find Ride",
@@ -54,6 +58,28 @@ const HowItWorks = (_props: Props) => {
   }
 
   const isSmall = useWindowSize();
+
+  // Download App
+
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) setDevice("android");
+    else if (/iPad|iPhone|iPod/.test(ua)) setDevice("ios");
+  }, []);
+
+  const openApp = () => {
+    if (device === "ios") {
+      window.location.href =
+        "https://apps.apple.com/us/app/buddyride/id6751210259";
+      return;
+    } else if (device === "android") {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.elonpaul.buddyrideapp";
+      return;
+    } else if (device === "desktop") {
+      setShowMobileModal(true);
+    }
+  };
   return (
     <div className="md:my-20 my-12 flex flex-col gap-20 overflow-hidden">
       <div className="sm:mx-20 flex flex-col items-center justify-center gap-3 text-center">
@@ -82,7 +108,7 @@ const HowItWorks = (_props: Props) => {
                 </h1>
                 <p className="text-white md:text-base">{x.desc}</p>
                 <Button
-                  onPress={() => setOpenWaitlistModal(true)}
+                  onPress={openApp}
                   className="w-fit bg-primary text-white"
                   size={isSmall ? "sm" : "md"}
                   radius="sm"
@@ -98,6 +124,10 @@ const HowItWorks = (_props: Props) => {
       <ComingSoonModal
         isOpen={openWaitlistModal}
         onClose={() => setOpenWaitlistModal(false)}
+      />
+      <DownloadOnMobileModal
+        isOpen={showMobileModal}
+        onOpenChange={() => setShowMobileModal(false)}
       />
     </div>
   );

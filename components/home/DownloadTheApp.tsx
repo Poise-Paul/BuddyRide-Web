@@ -3,10 +3,13 @@ import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
 import Link from "next/link";
 import ComingSoonModal from "../Modals/WaitListModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import DownloadOnMobileModal from "../Modals/DesktopModal";
 
 const DownloadTheApp = () => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+  const [device, setDevice] = useState("desktop");
+  const [showMobileModal, setShowMobileModal] = useState(false);
 
   const testimonials = [
     {
@@ -32,6 +35,27 @@ const DownloadTheApp = () => {
     },
   ];
 
+  // Download App
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) setDevice("android");
+    else if (/iPad|iPhone|iPod/.test(ua)) setDevice("ios");
+  }, []);
+
+  const openApp = () => {
+    if (device === "ios") {
+      window.location.href =
+        "https://apps.apple.com/us/app/buddyride/id6751210259";
+      return;
+    } else if (device === "android") {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.elonpaul.buddyrideapp";
+      return;
+    } else if (device === "desktop") {
+      setShowMobileModal(true);
+    }
+  };
+
   return (
     <div className="flex relative w-full sm:mb-80  flex-col">
       <div className="flex xm:flex-col xm:top-[200rem] md:mx-20 sm:mx-10 gap-10">
@@ -50,17 +74,17 @@ const DownloadTheApp = () => {
             Download BuddyRide
           </h1>
           <p>
-            Get to where you need to go—fast, safe, and hassle-free. Download the
-            BuddyRide app today and connect with trusted drivers for smooth,
+            Get to where you need to go—fast, safe, and hassle-free. Download
+            the BuddyRide app today and connect with trusted drivers for smooth,
             convenient rides whenever you need them!
           </p>
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex xm:justify-center xm:items-center gap-4">
             <Image
               alt="app-store-logo"
               className="md:w-40 w-32"
               radius="none"
               src="/app-store.png"
-              onClick={() => setOpenWaitlistModal(true)}
+              onClick={openApp}
             />
 
             <Image
@@ -68,7 +92,7 @@ const DownloadTheApp = () => {
               className="md:w-40 w-32"
               radius="none"
               src="/play-store.png"
-              onClick={() => setOpenWaitlistModal(true)}
+              onClick={openApp}
             />
           </div>
         </div>
@@ -119,6 +143,10 @@ const DownloadTheApp = () => {
       <ComingSoonModal
         isOpen={openWaitlistModal}
         onClose={() => setOpenWaitlistModal(false)}
+      />
+      <DownloadOnMobileModal
+        isOpen={showMobileModal}
+        onOpenChange={() => setShowMobileModal(false)}
       />
     </div>
   );

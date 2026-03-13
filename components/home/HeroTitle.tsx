@@ -1,13 +1,39 @@
 "use client";
 import { Button } from "@heroui/button";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaApple, FaGooglePlay } from "react-icons/fa";
 import ComingSoonModal from "../Modals/WaitListModal";
+import { Alert } from "@heroui/alert";
+import DownloadOnMobileModal from "../Modals/DesktopModal";
 
 type Props = {};
 
 const HeroTitle = (_props: Props) => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+  const [device, setDevice] = useState("desktop");
+  const [showMobileModal, setShowMobileModal] = useState(false);
+
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) setDevice("android");
+    else if (/iPad|iPhone|iPod/.test(ua)) setDevice("ios");
+  }, []);
+
+  const openApp = () => {
+
+    if (device === "ios") {
+      window.location.href =
+        "https://apps.apple.com/us/app/buddyride/id6751210259";
+      return;
+    } else if (device === "android") {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.elonpaul.buddyrideapp";
+      return;
+    } else if (device === "desktop") {
+      setShowMobileModal(true);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-5 text-center">
       <p className="text-xl font-NeuePlakExtendedBold text-black/30">
@@ -24,14 +50,14 @@ const HeroTitle = (_props: Props) => {
       </p>
       <div className="flex justify-center gap-5">
         <Button
-          onPress={() => setOpenWaitlistModal(true)}
+          onPress={openApp}
           className="bg-primary px-10 font-medium text-white"
           radius="sm"
         >
           Get Started
         </Button>
         <Button
-          onPress={() => setOpenWaitlistModal(true)}
+          onPress={openApp}
           className="bg-[#F8F9FA] px-5 font-medium text-[#1E1E1E]"
           radius="sm"
           startContent={
@@ -50,8 +76,14 @@ const HeroTitle = (_props: Props) => {
         isOpen={openWaitlistModal}
         onClose={() => setOpenWaitlistModal(false)}
       />
+      <DownloadOnMobileModal
+        isOpen={showMobileModal}
+        onOpenChange={() => setShowMobileModal(false)}
+      />
     </div>
   );
 };
 
 export default HeroTitle;
+
+// Waitlist -- setOpenWaitlistModal(true)

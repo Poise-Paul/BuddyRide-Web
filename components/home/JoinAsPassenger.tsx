@@ -1,15 +1,18 @@
 "use client";
-
 import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
 import React, { useEffect, useState } from "react";
 import { IoMdCheckmark } from "react-icons/io";
 import ComingSoonModal from "../Modals/WaitListModal";
+import DownloadOnMobileModal from "../Modals/DesktopModal";
 
 type Props = {};
 
 const JoinAsPassenger = (_props: Props) => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+  const [device, setDevice] = useState("desktop");
+  const [showMobileModal, setShowMobileModal] = useState(false);
+
   const list = [
     "Join rides created by drivers around you and also search for rides available",
     "Pay lesser fees instead of solo rides, split the cost with other passengers",
@@ -32,6 +35,27 @@ const JoinAsPassenger = (_props: Props) => {
 
   const isSmall = useWindowSize();
 
+  // Download App
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) setDevice("android");
+    else if (/iPad|iPhone|iPod/.test(ua)) setDevice("ios");
+  }, []);
+
+  const openApp = () => {
+    if (device === "ios") {
+      window.location.href =
+        "https://apps.apple.com/us/app/buddyride/id6751210259";
+      return;
+    } else if (device === "android") {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.elonpaul.buddyrideapp";
+      return;
+    } else if (device === "desktop") {
+      setShowMobileModal(true);
+    }
+  };
+
   return (
     <div className="md:my-20 my-10 grid xm:gap-10 sm:grid-cols-2">
       <div className="flex flex-col justify-center gap-4">
@@ -50,7 +74,7 @@ const JoinAsPassenger = (_props: Props) => {
           ))}
         </ul>
         <Button
-          onPress={() => setOpenWaitlistModal(true)}
+          onPress={openApp}
           className="max-w-fit bg-primary px-10 text-white"
           size={isSmall ? "sm" : "md"}
           radius="sm"
@@ -66,6 +90,10 @@ const JoinAsPassenger = (_props: Props) => {
       <ComingSoonModal
         isOpen={openWaitlistModal}
         onClose={() => setOpenWaitlistModal(false)}
+      />
+      <DownloadOnMobileModal
+        isOpen={showMobileModal}
+        onOpenChange={() => setShowMobileModal(false)}
       />
     </div>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { Image } from "@heroui/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { AiFillInstagram } from "react-icons/ai";
@@ -13,11 +13,14 @@ import ComingSoonModal from "../Modals/WaitListModal";
 import { usePathname } from "next/navigation";
 import SocialsComingSoonModal from "../Modals/SocialMediaModal";
 import { useDisclosure } from "@heroui/modal";
+import DownloadOnMobileModal from "../Modals/DesktopModal";
 
 type Props = {};
 
 const Footer = (props: Props) => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+  const [device, setDevice] = useState("desktop");
+  const [showMobileModal, setShowMobileModal] = useState(false);
 
   const {
     isOpen: isSocialModalOpen,
@@ -26,6 +29,27 @@ const Footer = (props: Props) => {
   } = useDisclosure();
 
   const path = usePathname();
+
+  // Download App
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) setDevice("android");
+    else if (/iPad|iPhone|iPod/.test(ua)) setDevice("ios");
+  }, []);
+
+  const openApp = () => {
+    if (device === "ios") {
+      window.location.href =
+        "https://apps.apple.com/us/app/buddyride/id6751210259";
+      return;
+    } else if (device === "android") {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.elonpaul.buddyrideapp";
+      return;
+    } else if (device === "desktop") {
+      setShowMobileModal(true);
+    }
+  };
 
   return (
     <div className="bg-[#F3F5F7] overflow-hidden relative sm:mx-20 my-10 rounded-3xl flex xm:flex-col md:gap-40 gap-24 px-10 py-20">
@@ -77,10 +101,10 @@ const Footer = (props: Props) => {
           <div>
             <h1 className="font-semibold">BuddyRide</h1>
             <ul className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-3">
-              <Link as="button" onPress={() => setOpenWaitlistModal(true)}>
+              <Link as="button" onPress={openApp}>
                 Sign Up As Driver
               </Link>
-              <Link as="button" onPress={() => setOpenWaitlistModal(true)}>
+              <Link as="button" onPress={openApp}>
                 Sign Up As Passenger
               </Link>
             </ul>
@@ -197,6 +221,10 @@ const Footer = (props: Props) => {
       <SocialsComingSoonModal
         isOpen={isSocialModalOpen}
         onOpenChange={onSocialModalChange}
+      />
+      <DownloadOnMobileModal
+        isOpen={showMobileModal}
+        onOpenChange={() => setShowMobileModal(false)}
       />
     </div>
   );

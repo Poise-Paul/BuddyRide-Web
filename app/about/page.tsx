@@ -5,10 +5,13 @@ import { Button } from "@heroui/button";
 import { ShieldCheck, Globe, Users, Leaf } from "lucide-react";
 import Image from "next/image";
 import ComingSoonModal from "@/components/Modals/WaitListModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import DownloadOnMobileModal from "@/components/Modals/DesktopModal";
 
 const AboutPage = () => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
+  const [device, setDevice] = useState("desktop");
+  const [showMobileModal, setShowMobileModal] = useState(false);
 
   const values = [
     {
@@ -32,6 +35,27 @@ const AboutPage = () => {
       icon: <Leaf className="text-primary" size={32} />,
     },
   ];
+
+  // Download App
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    if (/android/i.test(ua)) setDevice("android");
+    else if (/iPad|iPhone|iPod/.test(ua)) setDevice("ios");
+  }, []);
+
+  const openApp = () => {
+    if (device === "ios") {
+      window.location.href =
+        "https://apps.apple.com/us/app/buddyride/id6751210259";
+      return;
+    } else if (device === "android") {
+      window.location.href =
+        "https://play.google.com/store/apps/details?id=com.elonpaul.buddyrideapp";
+      return;
+    } else if (device === "desktop") {
+      setShowMobileModal(true);
+    }
+  };
 
   return (
     <div className="bg-white">
@@ -72,7 +96,7 @@ const AboutPage = () => {
             </p>
             <Button
               color="primary"
-              onPress={() => setOpenWaitlistModal(true)}
+              onPress={openApp}
               className="mt-8 font-NeuePlakBold h-12 px-8"
               radius="full"
             >
@@ -120,7 +144,9 @@ const AboutPage = () => {
               >
                 <CardBody className="p-8 flex flex-col items-center text-center">
                   <div className="mb-4 bg-white p-3 rounded-2xl">{v.icon}</div>
-                  <h3 className="text-xl text-white font-NeuePlakBold mb-2">{v.title}</h3>
+                  <h3 className="text-xl text-white font-NeuePlakBold mb-2">
+                    {v.title}
+                  </h3>
                   <p className="text-gray-400 font-NeuePlakRegular text-sm leading-relaxed">
                     {v.desc}
                   </p>
@@ -137,7 +163,7 @@ const AboutPage = () => {
           Ready to share your next journey?
         </h2>
         <Button
-          onPress={() => setOpenWaitlistModal(true)}
+          onPress={openApp}
           className="bg-primary text-white font-NeuePlakBold text-lg h-14 px-12"
           radius="full"
           variant="shadow"
@@ -150,6 +176,10 @@ const AboutPage = () => {
       <ComingSoonModal
         isOpen={openWaitlistModal}
         onClose={() => setOpenWaitlistModal(false)}
+      />
+      <DownloadOnMobileModal
+        isOpen={showMobileModal}
+        onOpenChange={() => setShowMobileModal(false)}
       />
     </div>
   );

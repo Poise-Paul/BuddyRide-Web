@@ -199,9 +199,20 @@ const Footer = (props: Props) => {
         </div>
         <div className="">
           <h1 className="font-semibold">Address</h1>
-          <p className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-3">
-            32 Salix Court Whitebeam Close Salford M6 5HL, United Kingdom
-          </p>
+          <div className="text-[#5E6461] text-sm mt-4 font-medium flex flex-col gap-4 max-w-64">
+            <address className="not-italic">
+              <span className="block font-semibold text-foreground">
+                United Kingdom
+              </span>
+              32 Salix Court Whitebeam Close Salford M6 5HL, United Kingdom
+            </address>
+            <address className="not-italic">
+              <span className="block font-semibold text-foreground">
+                Nigeria
+              </span>
+              105A, Express Road, Owo, Ondo State, Nigeria
+            </address>
+          </div>
         </div>
       </div>
 

@@ -8,6 +8,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import Footer from "@/components/home/Footer";
+import TawkChat from "@/components/TawkChat";
 import axios from "axios";
 
 export const metadata: Metadata = {
@@ -53,6 +54,8 @@ export default function RootLayout({
             </footer>
           </div>
         </Providers>
+        {/* Live chat bubble (tawk.to) on every page. */}
+        <TawkChat />
       </body>
     </html>
   );

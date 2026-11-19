@@ -7,6 +7,7 @@ import DownloadTheApp from "@/components/home/DownloadTheApp";
 import NewsSection from "@/components/home/NewsSection";
 import FAQ from "@/components/home/Faq";
 import Questions from "@/components/home/Questions";
+import WhereWeRide from "@/components/home/WhereWeRide";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Image radius="none" src="/Car-trip.jpg" alt="car-trip" className="" />
       </div>
       <HowItWorks />
+      <WhereWeRide />
       <JoinAsDriver />
       <JoinAsPassenger />
       <DownloadTheApp />

@@ -14,8 +14,9 @@ const TermsPage = () => {
               1.1 Eligibility
             </p>
             <p>
-              To use BuddyRide, you must be at least 18 years old, have a valid
-              email and phone number, and provide accurate information.
+              To use BuddyRide, you must be at least 18 years old (or the legal
+              minimum age in your region), have a valid email and phone number,
+              and provide accurate information.
             </p>
           </div>
           <div>
@@ -32,9 +33,10 @@ const TermsPage = () => {
               1.3 Service Description
             </p>
             <p>
-              BuddyRide connects drivers with passengers. We do not own
-              vehicles, employ drivers, or provide transportation directly.
-              Drivers operate independently.
+              BuddyRide connects drivers with passengers — through on-demand
+              private and shared rides in the UK and Sweden, and carpool
+              ride-sharing in Nigeria and Canada. We do not own vehicles, employ drivers, or provide
+              transportation directly. Drivers operate independently.
             </p>
           </div>
           <div>
@@ -42,8 +44,14 @@ const TermsPage = () => {
               1.4 Payments & Refunds
             </p>
             <p>
-              Payments are handled by secure providers. Drivers set their own
-              fares. Refunds or cancellations follow our specific policy.
+              Payments are handled by secure providers. In Nigeria and Canada
+              (carpool ride-sharing), drivers set their own fares; in the UK and
+              Sweden (on-demand private and shared rides), the fare is agreed between driver and
+              passenger in the app. Refunds and cancellations follow our{" "}
+              <a href="/refund" className="text-primary underline">
+                Cancellation &amp; Refund Policy
+              </a>
+              .
             </p>
           </div>
           <div>
@@ -114,7 +122,13 @@ const TermsPage = () => {
             </p>
             <ul className="list-disc ml-5 space-y-1">
               <li>Hold a valid driving licence.</li>
-              <li>Ensure vehicle is insured, taxed, and MOT-compliant (UK).</li>
+              <li>
+                Ensure your vehicle is insured, taxed, and meets local
+                roadworthiness requirements (e.g. a valid MOT in the UK, a
+                valid vehicle inspection (besiktning) in Sweden, a valid
+                roadworthiness certificate in Nigeria, or your province&apos;s
+                vehicle safety requirements in Canada).
+              </li>
               <li>Follow all traffic rules and speed limits.</li>
             </ul>
           </div>
@@ -133,15 +147,20 @@ const TermsPage = () => {
               3.3 Emergency Situations
             </p>
             <p className="text-sm">
-              In case of emergencies, call{" "}
+              In case of emergencies, call your local emergency number
+              immediately —{" "}
               <a href="tel:999" className="font-bold underline">
                 999 (UK)
+              </a>
+              ,{" "}
+              <a href="tel:112" className="font-bold underline">
+                112 (Sweden &amp; Nigeria)
               </a>{" "}
               or{" "}
-              <a href="tel:112" className="font-bold underline">
-                112 (Nigeria)
-              </a>{" "}
-              immediately.
+              <a href="tel:911" className="font-bold underline">
+                911 (Canada)
+              </a>
+              .
             </p>
           </div>
         </div>
@@ -169,7 +188,7 @@ const TermsPage = () => {
           </h1>
           <div className="flex items-center justify-center gap-2 text-gray-500 font-NeuePlakBold">
             <Calendar size={18} />
-            <span>Last Updated: December 2025</span>
+            <span>Last Updated: November 2026</span>
           </div>
         </div>
 

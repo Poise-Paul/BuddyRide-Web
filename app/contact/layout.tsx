@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Contact Us | BuddyRide Support & Inquiries",
   description:
-    "Have questions or need assistance with BuddyRide? Reach out to our support team for help with your account, rides, or driver registrations in Nigeria and the UK.",
+    "Have questions or need help with BuddyRide? Chat live with our support team or email us about your account, rides or driver registration in the UK, Sweden, Nigeria or Canada.",
   keywords: [
     "BuddyRide support",
     "contact BuddyRide",

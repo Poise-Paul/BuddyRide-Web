@@ -2,7 +2,7 @@ import React from "react";
 import { Shield, Lock, Eye, Users, Database, Globe } from "lucide-react";
 
 const PrivacyPolicy = () => {
-  const lastUpdated = "December 2025";
+  const lastUpdated = "November 2026";
 
   return (
     <div className="min-h-screen bg-white text-slate-800">
@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
           </h1>
           <p className="text-lg text-slate-600 mb-6">
             Your trust is our priority. Learn how we handle your data across
-            Nigeria and the UK.
+            the UK, Sweden, Nigeria and Canada.
           </p>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-slate-200 shadow-sm text-sm font-medium text-slate-500">
             <Globe size={16} />
@@ -47,9 +47,10 @@ const PrivacyPolicy = () => {
               </h3>
               <ul className="space-y-2 list-disc list-inside text-slate-600">
                 <li>Name, email address, and phone number</li>
-                <li>Profile details and ride-sharing preferences</li>
+                <li>Profile details, saved places and ride preferences</li>
                 <li>Driver documentation (License, vehicle details)</li>
                 <li>Communication logs via the BuddyRide platform</li>
+                <li>Messages you send to our support team (live chat or email)</li>
               </ul>
             </div>
             <div className="space-y-4 text-left">
@@ -78,9 +79,10 @@ const PrivacyPolicy = () => {
               </h2>
             </div>
             <p className="text-slate-600 text-left leading-relaxed">
-              Data is used to facilitate ride-matching, process multi-currency
-              payments (NGN/GBP), support fraud prevention, and comply with
-              safety regulations in Nigeria and the UK.
+              Data is used to facilitate ride-matching, process payments and
+              refunds in GBP, SEK, NGN and CAD, provide customer support,
+              support safety and fraud prevention, and comply with legal
+              requirements in the UK, Sweden, Nigeria and Canada.
             </p>
           </section>
 
@@ -92,8 +94,9 @@ const PrivacyPolicy = () => {
               </h2>
             </div>
             <p className="text-slate-600 text-left leading-relaxed">
-              We share your info with users you ride with and verified payment
-              processors.
+              We share your info with users you ride with, verified payment
+              processors, identity-verification and customer-support
+              providers, and law enforcement where the law requires it.
               <strong>
                 {" "}
                 BuddyRide does not sell or trade your personal information.
@@ -129,9 +132,12 @@ const PrivacyPolicy = () => {
           </div>
           <div className="prose text-left prose-slate max-w-none text-slate-600">
             <p>
-              Under the GDPR (UK) and NDPR (Nigeria), you have the right to
-              access, correct, or delete your personal data. You may also object
-              to data processing or request data portability at any time.
+              Depending on where you live — under the UK GDPR, the EU GDPR
+              (Sweden), the Nigeria Data Protection Act 2023, or Canada&apos;s
+              PIPEDA and applicable provincial privacy laws — you have the
+              right to access, correct, or delete your personal data. You may
+              also restrict or object to processing, or request data
+              portability.
             </p>
           </div>
         </section>

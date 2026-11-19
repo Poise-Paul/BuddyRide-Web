@@ -14,9 +14,10 @@ const JoinAsDriver = (_props: Props) => {
   const [showMobileModal, setShowMobileModal] = useState(false);
 
   const list = [
-    "Create Rides for passengers/customers to join for long journeys or short.",
-    "Drive and earn money while you set the rates you like, completely on you.",
-    "You set the destination and pickup for every ride no one orders you around.",
+    "UK & Sweden: go online and get requests for private or shared rides near you — accept the passenger's price or send a counter-offer.",
+    "Nigeria & Canada: create rides on your own route and schedule, set your seat price, and let passengers join.",
+    "Get paid in the app, with no withdrawal fees — BuddyRide covers them.",
+    "Choose your ride preferences and your own ride-request alert sound.",
   ];
 
   function useWindowSize() {

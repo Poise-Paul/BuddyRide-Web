@@ -2,7 +2,8 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "BuddyRide App",
-  description: "Find a Ride. Share the Journey. Save Money.",
+  description:
+    "On-demand private and shared rides in the UK and Sweden, and carpool ride-sharing in Nigeria and Canada.",
   navItems: [
     {
       label: "Home",

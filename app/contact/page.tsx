@@ -9,6 +9,7 @@ import {
   MessageSquare,
   Instagram,
   Twitter,
+  MessageCircle,
 } from "lucide-react";
 import { Input, Textarea } from "@heroui/input";
 import { Button } from "@heroui/button";
@@ -20,6 +21,7 @@ import { useDisclosure } from "@heroui/modal";
 import api from "@/utils/axios";
 import axios from "axios";
 import { ErrorResponse } from "@/types";
+import { openLiveChat } from "@/utils/liveChat";
 
 const ContactUsPage = () => {
   const [message, setMessage] = useState("");
@@ -132,14 +134,33 @@ const ContactUsPage = () => {
             Get in Touch
           </h1>
           <p className="text-gray-500 text-lg font-NeuePlakRegular">
-            Have questions about BuddyRide in Nigeria or the UK? We're here to
-            help.
+            Have questions about BuddyRide in the UK, Sweden, Nigeria or
+            Canada? We&apos;re here to help.
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* 1. Contact Info Cards */}
           <div className="flex flex-col gap-4">
+            {/* Live chat (tawk.to) — the quickest way to reach us. */}
+            <Card
+              isPressable
+              onPress={openLiveChat}
+              className="border-none shadow-sm bg-primary text-white"
+            >
+              <CardBody className="flex flex-row items-center gap-4 p-6">
+                <div className="bg-white/15 p-3 rounded-full">
+                  <MessageCircle size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs text-white/70 font-NeuePlakBold uppercase">
+                    Live Chat
+                  </p>
+                  <p className="font-NeuePlakSemibold">Chat with our support team</p>
+                </div>
+              </CardBody>
+            </Card>
+
             <Card className="border-none shadow-sm">
               <CardBody className="flex flex-row items-center gap-4 p-6">
                 <div className="bg-primary/10 p-3 rounded-full text-primary">

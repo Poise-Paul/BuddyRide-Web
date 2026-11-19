@@ -1,7 +1,7 @@
 export const metadata = {
   title: "FAQs | BuddyRide - Everything You Need to Know",
   description:
-    "Find answers about carpooling, driver requirements, payments in NGN and GBP, and safety measures on BuddyRide.",
+    "Answers about on-demand private and shared rides, carpooling, driver requirements, payments in GBP, SEK, NGN and CAD, and safety on BuddyRide.",
 };
 
 export default function FaqLayout({ children }: { children: React.ReactNode }) {

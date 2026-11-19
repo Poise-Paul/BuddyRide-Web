@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Refunds & Cancellations | BuddyRide - Policy & Procedures",
   description:
-    "Understand the BuddyRide refund and cancellation policy. Learn about booking updates, refund eligibility, and cancellation fees for users in Nigeria and the UK.",
+    "The BuddyRide cancellation and refund policy for each country — cancellation fees, waiting time, refunds, disputes and driver withdrawals in the UK, Sweden, Nigeria and Canada.",
   keywords: [
     "BuddyRide refund policy",
     "cancel ride-share booking",

@@ -10,13 +10,13 @@ const PassengerSafety = () => {
       icon: <UserCheck className="text-primary" size={24} />,
     },
     {
-      title: "Real-Time Tracking",
-      desc: "Share your live trip status with friends or family so they know exactly where you are.",
+      title: "Share Your Trip",
+      desc: "Send family or friends a live tracking link so they can follow your ride in real time — no app needed.",
       icon: <MapPin className="text-primary" size={24} />,
     },
     {
-      title: "In-App Safety Toolkit",
-      desc: "Access emergency buttons and report issues instantly through the BuddyRide app.",
+      title: "Help With Every Trip",
+      desc: "Chat with or email our support team from any trip in the app — your trip details are shared automatically.",
       icon: <ShieldCheck className="text-primary" size={24} />,
     },
     {
@@ -61,11 +61,12 @@ const PassengerSafety = () => {
               Emergency?
             </h2>
             <p className="font-NeuePlakRegular text-gray-400">
-              If you are in immediate danger, use the SOS button in the app or
-              call local emergency services.
+              If you are in immediate danger, call your local emergency number
+              first. Then let us know what happened through the app or live
+              chat.
             </p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <Button
               as="a"
               href="tel:999"
@@ -80,7 +81,15 @@ const PassengerSafety = () => {
               className="bg-white text-black font-NeuePlakBold px-8"
               radius="full"
             >
-              112 (NG)
+              112 (SE / NG)
+            </Button>
+            <Button
+              as="a"
+              href="tel:911"
+              className="bg-white text-black font-NeuePlakBold px-8"
+              radius="full"
+            >
+              911 (CA)
             </Button>
           </div>
         </div>

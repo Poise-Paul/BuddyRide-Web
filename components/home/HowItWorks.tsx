@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 import { Input } from "@heroui/input";
 import ComingSoonModal from "../Modals/WaitListModal";
 import DownloadOnMobileModal from "../Modals/DesktopModal";
+import { COUNTRIES, RIDE_MODE_LABEL, RideMode } from "@/config/countries";
 
 type Props = {};
 
@@ -21,28 +22,55 @@ const HowItWorks = (_props: Props) => {
   const [device, setDevice] = useState("desktop");
   const [showMobileModal, setShowMobileModal] = useState(false);
 
-  const images = [
-    {
-      title: "Find Ride",
-      desc: "Find ride from the list of rides created by different drivers",
-      img: "/work-person-01.jpg",
-    },
-    {
-      title: "Send Request",
-      desc: "Send join request to join any ride of your choice.",
-      img: "/work-person-02.jpg",
-    },
-    {
-      title: "Make Payment",
-      desc: "Make payments the same way you’re comfortable with",
-      img: "/work-person-03.jpg",
-    },
-    {
-      title: "Join Ride",
-      desc: "Join ride with other passengers and enjoy your journey",
-      img: "/work-person-04.jpg",
-    },
-  ];
+  // The two ways BuddyRide works, by country (config/countries.ts).
+  const [mode, setMode] = useState<RideMode>("on-demand");
+  const stepsByMode: Record<RideMode, { title: string; desc: string; img: string }[]> = {
+    "on-demand": [
+      {
+        title: "Set Your Trip",
+        desc: "Enter your pickup and destination, and ride privately or share with others going your way.",
+        img: "/work-person-01.jpg",
+      },
+      {
+        title: "Name Your Price",
+        desc: "Propose a fare. Nearby drivers accept it or send you a counter-offer.",
+        img: "/work-person-02.jpg",
+      },
+      {
+        title: "Pick a Driver",
+        desc: "Choose the offer you like and pay securely in the app.",
+        img: "/work-person-03.jpg",
+      },
+      {
+        title: "Ride",
+        desc: "Track your driver live and share your trip with family or friends.",
+        img: "/work-person-04.jpg",
+      },
+    ],
+    "ride-sharing": [
+      {
+        title: "Find Ride",
+        desc: "Find a ride from the list of rides created by drivers heading your way.",
+        img: "/work-person-01.jpg",
+      },
+      {
+        title: "Send Request",
+        desc: "Send a request to join any ride of your choice.",
+        img: "/work-person-02.jpg",
+      },
+      {
+        title: "Make Payment",
+        desc: "Pay securely in the app once the driver accepts.",
+        img: "/work-person-03.jpg",
+      },
+      {
+        title: "Join Ride",
+        desc: "Ride with other passengers and split the cost of the journey.",
+        img: "/work-person-04.jpg",
+      },
+    ],
+  };
+  const images = stepsByMode[mode];
 
   function useWindowSize() {
     const [isSmall, setIsSmall] = useState(false);
@@ -88,12 +116,35 @@ const HowItWorks = (_props: Props) => {
         </h1>
         <p className="max-w-xl">
           BuddyRide connects riders with trusted drivers for safe, hassle-free
-          trips. Just request, match, and ride!
+          trips. How you ride depends on where you are:
         </p>
+        <div
+          role="tablist"
+          aria-label="Ride type"
+          className="mt-2 flex flex-wrap justify-center gap-2 rounded-full bg-[#F3F5F7] p-1"
+        >
+          {(["on-demand", "ride-sharing"] as RideMode[]).map((m) => (
+            <button
+              key={m}
+              role="tab"
+              type="button"
+              aria-selected={mode === m}
+              onClick={() => setMode(m)}
+              className={`rounded-full px-5 py-2 text-sm font-NeuePlakSemibold transition-colors ${
+                mode === m ? "bg-primary text-white" : "text-black/60 hover:text-primary"
+              }`}
+            >
+              {RIDE_MODE_LABEL[m]} ·{" "}
+              {COUNTRIES.filter((c) => c.mode === m)
+                .map((c) => `${c.flag} ${c.key === "uk" ? "UK" : c.name}`)
+                .join(" ")}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="flex gap-5 xm:flex-col sm:overflow-hidden">
         {images.map((x, key) => (
-          <div key={key}>
+          <div key={`${mode}-${key}`}>
             <div className="relative rounded-xl">
               <Image
                 alt={`work-person-0${key}`}

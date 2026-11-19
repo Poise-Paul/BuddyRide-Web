@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Terms and Conditions | BuddyRide - User Agreement",
+  title: "Privacy Policy | BuddyRide - How We Protect Your Data",
   description:
-    "Review the BuddyRide Terms and Conditions. Learn about our service rules, user responsibilities, and legal framework for ride-sharing in Nigeria and the UK.",
+    "Read the BuddyRide Privacy Policy — what we collect, how we use and protect it, and your rights in the UK, Sweden, Nigeria and Canada.",
   keywords: [
     "BuddyRide terms",
     "user agreement",

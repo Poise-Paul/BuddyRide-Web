@@ -1,7 +1,7 @@
 export const metadata = {
   title: "About Us | BuddyRide - Our Mission & Community",
   description:
-    "Learn about BuddyRide's journey in revolutionizing travel across Nigeria and the UK. Discover our mission for sustainable, safe, and community-driven ride-sharing.",
+    "Learn about BuddyRide's mission to make travel fairer and more affordable across the UK, Sweden, Nigeria and Canada — with on-demand private and shared rides, and community carpooling.",
   keywords: [
     "BuddyRide mission",
     "carpooling Nigeria",

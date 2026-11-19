@@ -66,7 +66,8 @@ const Footer = (props: Props) => {
         <h1 className="font-NeuePlakExtendedBold">BUDDYRIDE</h1>
         <div className="border-2 max-w-40 border-t-2 border-primary" />
         <p className="font-semibold text-[#5E6461]">
-          The best ride-sharing platform.
+          On-demand private and shared rides in the UK and Sweden; carpool
+          ride-sharing in Nigeria and Canada.
         </p>
         <div className="flex gap-3">
           <Link onPress={onSocialModalOpen} className="cursor-pointer">
@@ -221,7 +222,7 @@ const Footer = (props: Props) => {
       {/* Footer Messages */}
       <div className="absolute bottom-0 pb-5 left-0 right-0 flex justify-center">
         <p className="text-sm text-[#5E6461]">
-          © 2025 BuddyRide. All rights reserved.
+          © {new Date().getFullYear()} BuddyRide. All rights reserved.
         </p>
       </div>
       {/* Modal */}

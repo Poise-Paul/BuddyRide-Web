@@ -40,13 +40,15 @@ const HeroTitle = (_props: Props) => {
         Welcome to BuddyRide
       </p>
       <h1 className="text-4xl font-black font-NeuePlakExtendedBlack text-primary">
-        Find a Ride. Share the Journey. Save Money.
+        Ride Now or Share the Journey. Always Save.
       </h1>
-      <p className="text-center">
-        BuddyRide connects drivers with empty seats to riders looking for a
-        convenient, affordable way to travel. Whether you&apos;re commuting,
-        heading on a road trip, or just exploring the city, BuddyRide makes it
-        easy to share a ride, split the cost, and make new connections!
+      <p className="text-center max-w-3xl mx-auto">
+        BuddyRide gets you where you&apos;re going across the UK, Sweden,
+        Nigeria and Canada. In the UK and Sweden, request an on-demand ride —
+        on your own, or shared with other passengers going your way — and agree
+        your price with a nearby driver before you go. In Nigeria and Canada,
+        join a carpool with a driver already heading your way and split the
+        cost.
       </p>
       <div className="flex justify-center gap-5">
         <Button

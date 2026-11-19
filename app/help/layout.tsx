@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Help Center | BuddyRide Support & Resource Hub",
   description:
-    "Need help with BuddyRide? Visit our Help Center for troubleshooting guides, account support, and safety tips for your journeys in Nigeria and the UK.",
+    "Need help with BuddyRide? Visit our Help Center or chat with us live for help with rides, payments, safety and your account in the UK, Sweden, Nigeria and Canada.",
   keywords: [
     "BuddyRide help",
     "customer support",

@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Open Download | BuddyRide - Our Mission & Community",
   description:
-    "Learn about BuddyRide's journey in revolutionizing travel across Nigeria and the UK. Discover our mission for sustainable, safe, and community-driven ride-sharing.",
+    "Get the BuddyRide app — on-demand private and shared rides in the UK and Sweden, and carpool ride-sharing in Nigeria and Canada.",
   keywords: [
     "BuddyRide mission",
     "carpooling Nigeria",

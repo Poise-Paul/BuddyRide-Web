@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Passenger Safety | BuddyRide - Your Security is Our Priority",
   description:
-    "Discover how BuddyRide keeps you safe with vetted drivers, real-time trip tracking, and in-app emergency tools for every journey in Nigeria and the UK.",
+    "Discover how BuddyRide keeps you safe with verified drivers, live trip sharing and support on every trip in the UK, Sweden, Nigeria and Canada.",
   keywords: [
     "BuddyRide safety",
     "passenger security",

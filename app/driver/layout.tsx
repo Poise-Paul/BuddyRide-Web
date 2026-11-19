@@ -2,7 +2,7 @@ export const metadata = {
   metadataBase: new URL("https://buddyridenow.com"),
   title: "Driver Safety | BuddyRide - Secure Partnerships & Support",
   description:
-    "Explore BuddyRide's driver safety protocols. From passenger verification and trip logging to 24/7 incident support, we protect our partners on every road in Nigeria and the UK.",
+    "Explore BuddyRide's driver safety features — passenger verification, trip logging, in-app chat and support on every trip — for drivers in the UK, Sweden, Nigeria and Canada.",
   keywords: [
     "BuddyRide driver safety",
     "partner protection",

@@ -14,11 +14,18 @@ import {
   Instagram,
   Twitter,
   Phone,
+  MessageCircle,
 } from "lucide-react";
 import { Input } from "@heroui/input";
 import { Card, CardBody } from "@heroui/card";
 import { Button } from "@heroui/button";
-import Image from "next/image";
+import {
+  COUNTRIES,
+  SUPPORT_EMAIL,
+  SUPPORT_PHONE,
+  SUPPORT_PHONE_HREF,
+} from "@/config/countries";
+import { openLiveChat } from "@/utils/liveChat";
 
 const HelpCenter = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,20 +34,28 @@ const HelpCenter = () => {
     {
       title: "Getting Started",
       icon: <Car size={32} className="text-primary" />,
-      topics: ["How to book a ride", "Vehicle types", "Price estimates"],
+      topics: [
+        "Private & shared rides (UK & Sweden)",
+        "Carpools (Nigeria & Canada)",
+        "Prices & counter-offers",
+      ],
     },
     {
       title: "Payments & Wallet",
       icon: <Wallet size={32} className="text-primary" />,
-      topics: ["Funding your wallet", "PayPal in the UK", "Refund status"],
+      topics: [
+        "Card payments (UK, Sweden & Canada)",
+        "Wallet top-ups (Nigeria)",
+        "Refund status",
+      ],
     },
     {
       title: "Safety & Security",
       icon: <ShieldCheck size={32} className="text-primary" />,
       topics: [
         "Verification process",
-        "Sharing live location",
-        "Emergency button",
+        "Sharing your live trip",
+        "Reporting a safety concern",
       ],
     },
     {
@@ -84,9 +99,11 @@ const HelpCenter = () => {
             <AlertCircle size={20} />
           </div>
           <p className="font-NeuePlakRegular text-sm md:text-base">
-            <strong>Active Trip?</strong> For immediate assistance during a
-            ride, please use the <strong>Safety Toolkit</strong> inside your
-            app.
+            <strong>Need help with a trip?</strong> In the app, open the trip
+            and tap <strong>Chat</strong> or <strong>Email</strong> under
+            &ldquo;Need help with this trip?&rdquo; — support gets the trip&apos;s
+            details automatically. In an emergency, call your local emergency
+            number first.
           </p>
         </div>
 
@@ -126,12 +143,22 @@ const HelpCenter = () => {
               Still need assistance?
             </h2>
             <p className="text-gray-500 max-w-xl mx-auto mb-8 font-NeuePlakRegular">
-              Our support team is available 24/7 for Nigeria and UK users. We
+              Our support team is here for riders and drivers in the UK,
+              Sweden, Nigeria and Canada. Chat with us live, or email and we
               typically respond within 12 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 className="bg-primary text-white font-NeuePlakBold h-14 px-10"
+                radius="full"
+                startContent={<MessageCircle size={20} />}
+                onPress={openLiveChat}
+              >
+                Live Chat
+              </Button>
+              <Button
+                variant="bordered"
+                className="border-primary text-primary font-NeuePlakBold h-14 px-10"
                 radius="full"
                 onPress={() =>
                   (window.location.href = "mailto:support@buddyridenow.com")
@@ -160,110 +187,55 @@ const HelpCenter = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Nigeria Support */}
-            <Card className="border-none shadow-sm p-4">
-              <CardBody>
-                <div className="flex items-center gap-3 mb-6">
-                  <Image
-                    height={50}
-                    width={50}
-                    alt="nigerian-flag"
-                    src="/nigerian-flag.avif"
-                  />
-                  {/* Nigeria Flag Colors */}
-                  <h3 className="font-NeuePlakBold text-xl">Nigeria Support</h3>
-                </div>
-
-                <div className="space-y-4">
-                  <a
-                    href="tel:+234XXXXXXXXXX"
-                    className="flex items-center gap-4 group"
-                  >
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-                      <Phone size={20} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 font-bold uppercase">
-                        Call/WhatsApp
-                      </p>
-                      <p className="font-NeuePlakSemibold text-lg">
-                        +234 (0) XXX XXX XXXX
-                      </p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="mailto:support.ng@buddyridenow.com"
-                    className="flex items-center gap-4 group"
-                  >
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-                      <Mail size={20} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 font-bold uppercase">
-                        Email Support
-                      </p>
-                      <p className="font-NeuePlakSemibold text-lg">
-                        support@buddyridenow.com
-                      </p>
-                    </div>
-                  </a>
-                </div>
-              </CardBody>
-            </Card>
-
-            {/* UK Support */}
-            <Card className="border-none shadow-sm p-4">
-              <CardBody>
-                <div className="flex items-center gap-3 mb-6">
-                  <Image
-                    height={50}
-                    width={50}
-                    alt="nigerian-flag"
-                    src="/uk-flag.avif"
-                  />
-                  <h3 className="font-NeuePlakBold text-xl">UK Support</h3>
-                </div>
-
-                <div className="space-y-4">
-                  <a
-                    href="tel:+447359592718"
-                    className="flex items-center gap-4 group"
-                  >
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-                      <Phone size={20} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 font-bold uppercase">
-                        Call Support
-                      </p>
-                      <p className="font-NeuePlakSemibold text-lg">
-                        +44 7359 592718
-                      </p>
-                    </div>
-                  </a>
-
-                  <a
-                    href="mailto:support.uk@buddyridenow.com"
-                    className="flex items-center gap-4 group"
-                  >
-                    <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
-                      <Mail size={20} />
-                    </div>
-                    <div>
-                      <p className="text-xs text-gray-400 font-bold uppercase">
-                        Email Support
-                      </p>
-                      <p className="font-NeuePlakSemibold text-lg">
-                        support@buddyridenow.com
-                      </p>
-                    </div>
-                  </a>
-                </div>
-              </CardBody>
-            </Card>
+          {/* One support team for every country. */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                label: "Live Chat",
+                value: "Chat with us now",
+                icon: <MessageCircle size={20} />,
+                onPress: openLiveChat,
+              },
+              {
+                label: "Email Support",
+                value: SUPPORT_EMAIL,
+                icon: <Mail size={20} />,
+                onPress: () => (window.location.href = `mailto:${SUPPORT_EMAIL}`),
+              },
+              {
+                label: "Call Support",
+                value: SUPPORT_PHONE,
+                icon: <Phone size={20} />,
+                onPress: () => (window.location.href = SUPPORT_PHONE_HREF),
+              },
+            ].map((channel) => (
+              <Card
+                key={channel.label}
+                isPressable
+                onPress={channel.onPress}
+                className="border-none shadow-sm group"
+              >
+                <CardBody className="flex flex-row items-center gap-4 p-6">
+                  <div className="p-3 bg-primary/10 rounded-full group-hover:bg-primary group-hover:text-white transition-colors">
+                    {channel.icon}
+                  </div>
+                  <div className="text-left">
+                    <p className="text-xs text-gray-400 font-bold uppercase">
+                      {channel.label}
+                    </p>
+                    <p className="font-NeuePlakSemibold text-lg break-all">
+                      {channel.value}
+                    </p>
+                  </div>
+                </CardBody>
+              </Card>
+            ))}
           </div>
+
+          <p className="mt-6 text-center text-gray-500 font-NeuePlakRegular">
+            Supporting riders and drivers in{" "}
+            {COUNTRIES.map((c) => `${c.flag} ${c.name}`).join(" · ")}
+          </p>
 
           {/* General Social Support */}
           <div className="mt-8 flex justify-center gap-6">

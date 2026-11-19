@@ -7,6 +7,7 @@ import { Input } from "@heroui/input";
 import { Button } from "@heroui/button";
 import { SearchIcon } from "@/components/icons";
 import Link from "next/link";
+import { openLiveChat } from "@/utils/liveChat";
 
 const FaqPage = () => {
   const [openWaitlistModal, setOpenWaitlistModal] = useState(false);
@@ -54,14 +55,23 @@ const FaqPage = () => {
           If you couldn't find the answer you're looking for, our team is ready
           to help.
         </p>
-        <Button
-          color="primary"
-          className="font-NeuePlakBold px-10 h-12"
-          href="/contact"
-          as={Link}
-        >
-          Contact Support
-        </Button>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Button
+            color="primary"
+            className="font-NeuePlakBold px-10 h-12"
+            onPress={openLiveChat}
+          >
+            Live Chat
+          </Button>
+          <Button
+            variant="bordered"
+            className="font-NeuePlakBold px-10 h-12 border-primary text-primary"
+            href="/contact"
+            as={Link}
+          >
+            Contact Support
+          </Button>
+        </div>
       </div>
 
       {/* Modal Message */}

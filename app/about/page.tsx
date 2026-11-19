@@ -21,7 +21,7 @@ const AboutPage = () => {
     },
     {
       title: "Community Driven",
-      desc: "Connecting the UK and Nigeria through shared journeys and shared stories.",
+      desc: "Connecting people across the UK, Sweden, Nigeria and Canada — one journey at a time.",
       icon: <Globe className="text-primary" size={32} />,
     },
     {
@@ -71,7 +71,9 @@ const AboutPage = () => {
           <p className="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto font-NeuePlakRegular leading-relaxed">
             BuddyRide was born from a simple observation: thousands of cars
             travel with empty seats every day, while people look for affordable
-            ways to commute. We turned that gap into a community.
+            ways to get around. We turned that gap into a community — and today
+            it gets people moving in four countries, whether they need a ride
+            right now or are planning a journey.
           </p>
         </div>
       </section>
@@ -84,15 +86,18 @@ const AboutPage = () => {
               Our Mission
             </h2>
             <p className="text-gray-600 mb-4 font-NeuePlakRegular text-lg">
-              We are on a mission to revolutionize transportation across Nigeria
-              and the UK. By making ride-sharing social and sustainable, we
-              empower drivers to offset costs and provide passengers with
-              premium, safe alternatives to traditional transport.
+              We are on a mission to make getting around fairer and more
+              affordable across the UK, Sweden, Nigeria and Canada. Passengers
+              agree their fare before they ride, and drivers earn on their own
+              terms, with safe, verified alternatives to traditional transport.
             </p>
             <p className="text-gray-600 font-NeuePlakRegular text-lg">
-              Whether it's a daily commute in Lagos or a city-to-city trip in
-              the UK, BuddyRide ensures you never have to travel alone or
-              overpay for a seat.
+              Need a ride now in London or Stockholm? Request one on demand —
+              on your own, or shared with others going your way — and agree
+              the price with a nearby driver. Planning a trip from Lagos
+              or across Canada? Join a shared ride with a driver already heading
+              your way and split the cost. Either way, you never overpay for a
+              seat.
             </p>
             <Button
               color="primary"

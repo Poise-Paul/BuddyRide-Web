@@ -14,10 +14,10 @@ const JoinAsPassenger = (_props: Props) => {
   const [showMobileModal, setShowMobileModal] = useState(false);
 
   const list = [
-    "Join rides created by drivers around you and also search for rides available",
-    "Pay lesser fees instead of solo rides, split the cost with other passengers",
-    "Make friends and build connection with other passengers",
-    "Make payment with the platform you’re used to already",
+    "UK & Sweden: request a ride on demand — private, or shared with other passengers to pay less — and agree the price before you go.",
+    "Nigeria & Canada: join carpools heading your way and split the cost with other passengers.",
+    "Pay securely in the app — by card, or with your BuddyRide wallet in Nigeria.",
+    "Share your trip live with family and friends, and chat with support any time.",
   ];
 
   function useWindowSize() {

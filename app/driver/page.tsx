@@ -34,11 +34,12 @@ const DriverSafety = () => {
             <CardBody>
               <Eye className="text-primary mb-4" size={32} />
               <h3 className="text-2xl font-NeuePlakBold mb-3">
-                24/7 Incident Support
+                Support On Every Trip
               </h3>
               <p className="text-gray-600 font-NeuePlakRegular">
-                Our specialized support team is available around the clock to
-                help with any on-road issues or disputes.
+                Chat with or email our support team straight from any trip —
+                the trip&apos;s details go with your message, so on-road issues
+                and disputes get sorted faster.
               </p>
             </CardBody>
           </Card>
@@ -47,12 +48,11 @@ const DriverSafety = () => {
             <CardBody>
               <Smartphone className="text-primary mb-4" size={32} />
               <h3 className="text-2xl font-NeuePlakBold mb-3">
-                Phone Number Masking
+                In-App Chat & Trip Sharing
               </h3>
               <p className="text-gray-600 font-NeuePlakRegular">
-                Keep your personal contact details private. All communication
-                between you and the passenger happens through the app's secure
-                masking system.
+                Message your passengers in the app to sort out pick-ups, and
+                share your live trip with someone you trust while you drive.
               </p>
             </CardBody>
           </Card>
@@ -74,6 +74,11 @@ const DriverSafety = () => {
 
         <div className="mt-16 p-8 bg-white rounded-3xl border border-gray-100">
           <h4 className="font-NeuePlakBold text-xl mb-4">Safe Driving Tips</h4>
+          <p className="font-NeuePlakRegular text-gray-600 mb-4">
+            Driving in the UK, Sweden, Nigeria or Canada? Keep your vehicle
+            insured and roadworthy for where you drive, and in an emergency
+            call 999 (UK), 112 (Sweden &amp; Nigeria) or 911 (Canada).
+          </p>
           <ul className="space-y-3 font-NeuePlakRegular text-gray-600">
             <li className="flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full" /> Always confirm
